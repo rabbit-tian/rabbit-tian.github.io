@@ -19,12 +19,20 @@
 ### HTTP方法
 1. get => 获取资源
 2. post => 传输资源
-3. pull => 更新资源
+3. put => 更新资源
 4. delete => 删除资源
 5. head => 获得报文首部
 
 ### POST和GET的区别
-
+1. get在浏览器中回退时，不会再次提交请求，而post会
+2. get产生的url地址可以被收藏，而post不可以
+3. get请求会被浏览器缓存，而post不会
+4. get请求传递的参数会被完整的保留在浏览器历史记录中，而post不会
+5. get请求的参数有长度限制，而post没有
+6. get请求的参数通过url传递，而post放在Request body中
+7. get比post更不安全，get请求的参数直接暴露在url上，不能传递敏感的信息
+8. get请求的参数数据类型只支持ASCII码，而post没有限制
+9. get请求只能进行url编码，而post支持多种编码方式
 
 ### HTTP状态码
 
