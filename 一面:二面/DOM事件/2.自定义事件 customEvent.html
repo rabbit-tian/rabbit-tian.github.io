@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div id="box"></div>
+<script>
+    let ev = document.getElementById('box')
+    let eve = new CustomEvent('test',{
+        "data": {
+            "a":true
+        }
+    })
+    ev.addEventListener('test',function (e) {
+        console.log(e.data)
+    })
+    ev.dispatchEvent(eve)
+
+</script>
+</body>
+</html>
