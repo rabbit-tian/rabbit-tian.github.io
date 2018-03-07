@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="txt"/>
+    <ul id="ul"></ul>
+<script src="jsonp_1.0.js"></script>
+<script>
+
+    // window.fn1 = function(){
+    //     alert('第一次');
+    // }
+
+    // window.fn1 = function(){
+    //     alert('第二次');
+    // }
+
+    // fn1();
+    //https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=miao&json=1&p=3&sid=1451_21122_18559_20881&req=2&csor=4&pwd=mia&cb=jQuery110205764458768366003_1509019985253&_=1509019985257
+
+    /*
+    *
+    *   1.url 和 jquery，callback都是后台定的
+    *   2. fn不能重名，会发生函数覆盖
+    *
+    * */
+
+
+    txt.onkeyup = function(){
+        jsonp({
+            url:'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su',
+            data:{
+                wd:txt.value
+            },
+             callback:'cb',
+            // fnName:'fn',
+            success:function(obj){
+                console.log(obj);
+//                ul.innerHTML = '';
+//                obj.suggestKeycords.forEach((e,i)=>{
+//                    ul.innerHTML += `<li>${e}</li>`
+//                });
+            },
+            fail:function(){
+                alert('请检查网络');
+            }
+        })
+    }
+
+
+
+
+</script>
+</body>
+</html>

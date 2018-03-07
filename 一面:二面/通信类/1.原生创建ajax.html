@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <input type="text" id="userId" />
+
+    <script>
+        var userId = document.getElementById('userId');
+
+        userId.onblur = function() {
+            ajax({
+                url: 'php/post.php',
+                method: 'post',
+                data: {
+                    user: userId.value
+                },
+                success: function(data) {
+                    console.log(data);
+                },
+                fail: function(code) {
+                    console.log(code);
+                }
+
+            });
+        };
+
+
+
+        // ajax函数封装
+
+        function ajax(json) {
+
+            // 默认项
+            var settings = {
+                url: '',
+                method: 'get',
+                data: {},
+                dataType: 'json',
+                success: function() {},
+                fail: function() {}
+            };
+
+            // 配置项,有配置项走配置项，没配置项走默认项
+
+            for (var attr in json) {
+                settings[attr] = json[attr];
+            }
+
+            // 序列化操作，把settings.data 的对象转化成 字符串格式
+            // 拼接成这种形式 user=txt.value&pass=123
+
+            var arr = [];
+            for (var attr in settings.data) {
+                arr.push(attr + '=' + settings.data[attr]);
+            }
+            settings.data = arr.join('&');
+
+            // 1. 创建一个ajax对象,兼容写法
+            var ajax = XMLHttpRequest ? new XMLHttpRequest : new window.ActiveXObject('Microsoft.XMLHTTP');
+
+            // 2. 填写后台地址，分 get 和 post两种请求方式
+
+            if (settings.method === 'get') {
+                // 填写后台地址
+                ajax.open('get', settings.url + '?' + settings.data, true);
+                // 发送给后台
+                ajax.send();
+
+            } else if (settings.method === 'post') {
+                // 填写后台地址
+                ajax.open('get', settings.url, true);
+                // 设置请求头
+                ajax.setRequestHeader('Contnet-Type', 'application/x-www-form-urlencoded');
+                // 发送给后台
+                ajax.send(settings.data);
+            }
+
+            // onreadystatechange 来解决 onload的兼容问题
+
+            ajax.onreadystatechange = function() {
+                // 4代表返回完成
+                if (ajax.readyState === 4) {
+                    // 200-207代表成功
+                    if (ajax.status >= 200 && ajax.status <= 207) {
+                        // json格式
+                        if (settings.dataType === 'json') {
+                            settings.success(eval('(' + ajax.responseText + ')'));
+                        } else if (settings.dataType === 'xml') {
+                            settings.success(ajax.responseXML);
+                        } else if (settings.dataType === 'str') {
+                            settings.success(ajax.responseText)
+                        }
+                    } else {
+                        settings.fail(ajax.status);
+                    }
+                }
+            }
+
+
+        }
+    </script>
+</body>
+
+</html>
