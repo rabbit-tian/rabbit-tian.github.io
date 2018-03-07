@@ -94,10 +94,10 @@
             this.type = 'child4'
         }
         // 利用 Object.create(),创建中间对象，把两个原型对象区分开
-        Child4.prototype = Object.create(Parent4)
+        Child4.prototype = Object.create(Parent4.prototype)
         Child4.prototype.constructor = Child4 // 写上自己的constructor
         let c4 = new Child4
-        console.log(c4 instanceof Child4,c4 instanceof Parent4) // true flase
+        console.log(c4 instanceof Child4,c4 instanceof Parent4) // true true
 
         console.log(c4.constructor) // Child4
 
