@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    /*
+        借助构造函数 和 call 方法实现继承
+        1. 原理：通过call方法将父类的构造函数this指向子构造函数的实例上去，继而实现继承
+        2. 缺点：只能实现部分继承，不能继承父类原型上的属性和方法
+    */
+    function Parent1 () {
+        this.name = 'parent1'
+    }
+    Parent1.prototype.say = function () {}
+
+    function Child1 () {
+        Parent1.call(this)
+        this.type = 'child1'
+    }
+
+    let c1 = new Child1
+    console.log(c1)
+
+
+    /*
+        借助原型链实现继承
+        1. 原理：Child2.prototype === c2.__proto__ === new Parent2
+        2. 缺点：当改变其中一个实例属性时，会改变原型属性的变化，进而改变了所有实例的属性
+    */
+    function Parent2 () {
+        this.name = 'parent2'
+        this.arr = [1,2,3]
+    }
+
+    function Child2 () {
+        this.type = 'child2'
+    }
+    Child2.prototype = new Parent2
+
+    let c2 = new Child2
+    let c21 = new Child2
+    console.log(c2)
+    console.log(c2.arr,c21.arr) // [1, 2, 3] (3) [1, 2, 3]
+    c21.arr.push(4)
+    console.log(c2.arr,c21.arr) // [1, 2, 3, 4] (4) [1, 2, 3, 4]
+
+    /*
+        
+
+    */
+
+
+</script>
+</body>
+</html>

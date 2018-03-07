@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    // 类的声明
+    function Animal () {
+        this.name = 'tian'
+    }
+
+    // ES6 class 类的声明
+    class Animal2 {
+        constructor () {
+            this.name = 'tian'
+        }
+    }
+
+    // 生成实例 ,没有参数可以不加括号
+
+    let a = new Animal()
+    let a2 = new Animal2
+
+    console.log(a,a2)
+
+</script>
+</body>
+</html>
