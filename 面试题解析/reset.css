@@ -1,0 +1,50 @@
+body,
+dd,
+dl,
+dt,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+html,
+li,
+ol,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+body {
+  max-width: 7.5rem;
+  font-size: 0.2rem;
+  font-family: "arial,helvetica,sans-serif";
+}
+dd,
+dl,
+dt,
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  display: block;
+  color: #fff;
+}
+img {
+  display: block;
+  border: 0;
+}
+input,
+button {
+  outline: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+.clearfix:after {
+  content: '';
+  display: block;
+  clear: both;
+}
