@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+<script>
+    let arr = [['a'],['b','c'],2,['d','e','f'],'g',3,4] // [a,b,c,2,d,e,f,g,3,4]
+
+    // 递归的方法
+
+    function flag (arr) {
+        let result = []
+        let each = function (arr) {
+            arr.forEach(item => {
+                if (item instanceof Array) {
+                    each(item)
+                }else{
+                    result.push(item)
+                }
+            })
+        }
+        each(arr)
+        return result.join(',')
+    }
+
+    console.log(flag (arr))
+
+</script>
+</body>
+</html>
