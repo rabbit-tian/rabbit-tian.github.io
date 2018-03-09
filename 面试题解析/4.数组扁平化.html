@@ -31,13 +31,16 @@
 
 
     // 类型转换的方法
-    Array.prototype.toString = function () {
-        return this.join(',')
-    }
 
     // 数组+ ，进行类型转换，先调用valueof，再调用toString的方法，所以在原型上对toString进行修改
     let flag2 = function (arr) {
-        return arr + ''
+        let toString = Array.prototype.toString
+        Array.prototype.toString = function () {
+            return this.join(',')
+        }
+        let result = arr + ''
+        Array.prototype.toString = toString
+        return result
     }
     console.log(flag2 (arr))
 
