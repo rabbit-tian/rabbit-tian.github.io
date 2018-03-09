@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    function Foo () {
+        getName = function () { console.log(1) }
+        return this
+    }
+
+    // 函数声明方法
+    Foo.getName = function () { console.log(2) }
+
+    Foo.prototype.getName = function () { console.log(3) }
+
+    var getName = function () { console.log(4) }
+
+    function getName () { console.log(5) }
+
+
+    Foo.getName() // 2
+
+    // 变量提升 把var和console.log(5) 的函数提升，最后console.log(4)赋值覆盖5
+    getName() // 4
+
+    // Foo()执行，console.log(1)函数覆盖console.log(4)函数，window.getName()执行，打印出1
+    Foo().getName() // 1
+
+    getName() // 1
+
+    // 运算符优先级： 点 的优先级比 new 大  new function () {console.log(2)}
+    new Foo.getName() // 2
+
+    // 以点为分割线，先计算 new Foo()
+    new Foo().getName() // 3
+    // 以点为分割线，先计算new Foo()  new 实例.getName()
+    new new Foo().getName()  // 3
+
+
+</script>
+</body>
+</html>
