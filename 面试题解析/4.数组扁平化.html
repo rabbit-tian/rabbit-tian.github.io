@@ -30,9 +30,9 @@
     console.log(flag (arr))
 
 
-    // 类型转换的方法
+    // 类型转换的方法 改toString
 
-    // 数组+ ，进行类型转换，先调用valueof，再调用toString的方法，所以在原型上对toString进行修改
+    // 数组+ ，进行类型转换，先调用valueof，再调用toString的方法，所以在原型上对toString进行修改,修改后再改回来，避免污染
     let flag2 = function (arr) {
         let toString = Array.prototype.toString
         Array.prototype.toString = function () {
@@ -43,6 +43,20 @@
         return result
     }
     console.log(flag2 (arr))
+
+    // 类型转换的方法 改valueof
+
+    // 数组+ ，进行类型转换，先调用valueof，再调用toString的方法，所以在原型上对toString进行修改,修改后再改回来，避免污染
+    let flag3 = function (arr) {
+        let valueof = Array.prototype.valueof
+        Array.prototype.valueof = function () {
+            return this.join(',')
+        }
+        let result = arr + ''
+        Array.prototype.valueof = valueof
+        return result
+    }
+    console.log(flag3 (arr))
 
 
 
