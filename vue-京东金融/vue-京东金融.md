@@ -44,7 +44,15 @@
         - 手机物理像素点：设备像素 2
         - 设备像素比 = 1/2   CSS像素/设备像素
     - viewport
-        - 
+    
+        ```
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        ```
+        - width: 控制viewport的大小，device-width:设备的宽度
+        - initial-scale：初始缩放比例
+        - maximum-scale：允许用户缩放的最大比例
+        - minimum-scale：允许用户缩放的最小比例
+        - user-scalable：用户是否可以手动缩放
     - rem
 2. 工作原理
     - 利用viewport和设备像素比调整基准像素
