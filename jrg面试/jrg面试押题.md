@@ -71,11 +71,11 @@
     
         ```
          function xxx() {
-            return new Promise() {
-                setTimeout(function (resolve,reject) {
+            return new Promise(function (resolve,reject) {
+                setTimeout(() => {
                     resolve() 或者 reject（）
                 },3000)
-            }
+            })
          }
          
          xxx().then(...)
@@ -94,9 +94,73 @@
     xhr.send('a=1&b=2')
     ```
 
-4. (必考) 闭包是什么
+4. (必考) 闭包是什么 [闭包](https://zhuanlan.zhihu.com/p/22486908)
+    - 闭包 + 立即执行函数 
     
     ```
-    function 
+    function createAdder() {
+        let n = 0 // 局部变量
+        return function () {
+            n+=1
+        }
+    }
+    
+    let adder = createAdder()
+    adder() // n === 1
+    adder() // n === 2
+    console.log(n) n is not defined
+    ```
+5. (必考) this指的是什么 [this](http://web.jobbole.com/91014/)
+    - fn(): this指的是window
+    - fn() 是 strict mode(严格模式)，this是undefined
+    - a.b.c.fn() this: a.b.c
+    - new Fn() ,this指向新生的实例
+    - （）=> console.log(this) this 就是外面的this
+
+
+6. (必考) 立即执行函数
+    - 目的:造出一个作用域，防止污染全局变量
+
+    ```
+    ;(function (){
+        var name
+    }())
+    ;(function (){
+        var name
+    })()
+    !!!function (){
+        var name
+    }()
+    ~function (){
+        var name
+    }()
+    ```
+    
+    - ES6 新语法
+    
+    ```
+    {
+        var name
+    }
+    ```
+
+7. async/await 语法了解吗？
+    - 目的：把异步代码写成同步代码
+
+    ```
+    function resultAfter2seconds() {
+        result new Promise ( resolve => {
+            setTimeout(() => {
+                resolve('resolved')
+            },2000)
+        })
+    } 
+    
+    async function asyncCall () {
+        let result = await resultAfter2seconds()
+    }
+    
+    asyncCall()
+    
     ```
 
