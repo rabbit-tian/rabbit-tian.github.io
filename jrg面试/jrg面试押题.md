@@ -13,9 +13,44 @@
 ### CSS押题
 1. 说一下盒模型 box-sizing
     - content-box(标准): 宽高是内容区宽高
-    - border-box(IE): 宽高包括 padding值和border值
+    - border-box(IE): 宽高包括 padding值和border值 (兼容IE时不适用)
 2. css reset 和 normalize.css 有什么区别？
     - css reset：样式重置，抛弃默认样式
     - normalize.css：让所有浏览器的标签都和标准规定的默认样式一致
+3. (必考)如何居中
+    - 水平居中
+        - 内联：爸爸身上 写 text-align:center
+        - 块级：margin-left:auto;margin-right:auto;
+
+    - [垂直居中](https://jscode.me/t/topic/1936)
+
+4. 选择器优先级如何确定
+    - 选择器越具体，优先级越高， #div > .div
+    - 同样优先级，写在后面的覆盖前面的
+    - color: red !importanr; 优先级最高
+
+5. BFC是什么？
+    - overflow:hidden; 清除浮动 （用.clearfix 清除浮动）
+    - overflow:hidden; 取消父子 margin 合并（用 父级+ padding-top：0.1px；）
+
+6. 如何清除浮动
+    - 父级加 Height ：只适合固定高度
+    - 结尾处加空div标签 clear{clear:both;}
+        - 原理：添加一个空div，利用css提高的clear:both清除浮动，让父级div能自动获取到高度 
+    - overflow:hidden;浏览器会自动检查浮动区域的高度 ， (不好) 超出部分被影藏，后遗症多
+    - .clearfix  完美
+
+        ```
+        .clearfix::after{
+            content: "";
+            display: block;
+            clear: both;
+            zoom: a;  // 兼容IE 加
+        }
+        ```
+### JS押题
+1. JS数据类型
+    - number(NaN)，string，boolean，null,undefined,object,symbol
+    - object包括：数组，函数，正则，日期
 
 
