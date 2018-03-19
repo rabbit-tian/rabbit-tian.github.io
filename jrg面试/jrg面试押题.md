@@ -14,6 +14,7 @@
 1. 说一下盒模型 box-sizing
     - content-box(标准): 宽高是内容区宽高
     - border-box(IE): 宽高包括 padding值和border值 (兼容IE时不适用)
+    - 解释一下弹性盒模型flexbox，以及使用场景
 2. css reset 和 normalize.css 有什么区别？
     - css reset：样式重置，抛弃默认样式
     - normalize.css：让所有浏览器的标签都和标准规定的默认样式一致
@@ -23,6 +24,7 @@
         - 块级：margin-left:auto;margin-right:auto;
 
     - [垂直居中](https://jscode.me/t/topic/1936)
+    - 水平垂直居中
 
 4. 选择器优先级如何确定
     - 选择器越具体，优先级越高， #div > .div
@@ -49,6 +51,20 @@
         }
         ```
         
+7. position：的值
+    - absoulte: 基于有定位属性的父元素定位
+    - relative: 基于自己本身定位
+    - fixed: 基于页面定位  
+    
+8. 如何隐藏一个元素（不少于7中）
+9. 将footer固定在底部的方法
+10. css预处理器，sass中常用的有哪些
+11. css优化，提高性能的方法
+12. 浏览器是如何解析css选择器的
+   
+### Jquery的知识
+1.    
+    
         
 ### JS押题
 
@@ -241,7 +257,8 @@
 1. DOM事件模型 [DOM](http://jsbin.com/raqakog/1/edit?js,console,output)
     1. 冒泡
     2. 捕获
-    3. 如果这个元素是被点击的元素,那么捕获不一定在冒泡之前，顺序是由监听顺序决定的   
+    3. 如果这个元素是被点击的元素,那么捕获不一定在冒泡之前，顺序是由监听顺序决定的 
+    4. DOM事件流  
 2. 移动端的触摸事件了解吗？
     - touchstart touchmove touchend touchcancel
     - 模拟swipe事件: 记录两次touchmove的位置差，如果最后一次在前一次的右边，说明向右滑了
@@ -249,6 +266,22 @@
 3. 事件委托是什么，有什么好处？ [事件委托](https://github.com/FrankFang/wheels/blob/master/lib/dom/index.js)
     - 假设父元素有4个儿子，我不监听4个儿子，而是监听父元素，看触发的事件元素是哪个儿子，触发后，事件冒泡到监听元素上，然后监听元素捕捉到事件，然后处理
     - 好处：可以监听动态生成的元素，省监听器
+ 
+4. DOM: 0级，1级，2级事件是什么
+5. event对象下常见的方法有哪些
+6. 如何定义一个事件
+
+
+### jquery押题
+1. onload()函数和JQuery中`$(document).read(function () {})` 和 `$(function () {})` 的区别
+2. jQuery中遍历节点的方法有哪些
+3. jQuery中操作属性和样式的方法有哪些
+4. jQuery中如何克隆(复制)和删除节点
+5. jQuery中如何进行内容操作
+6. jQ中html(),text(),val()的区别
+7. jQ中find(),has(),filter()的区别
+8. JQ中closet()和parents()的区别
+9. jQ中如何对选择器进行性能优化
     
     
     
@@ -310,13 +343,15 @@
     - [看文档](https://cn.vuejs.org/v2/guide/reactivity.html)
 6. Computed 计算属性的用法？跟 Methods 的区别。
     - [参考](https://zhuanlan.zhihu.com/p/33778594)
+7. MVVM框架的核心思想
+    -  module，view，viewModule通过双向绑定，操作数据来驱动ui
+    - 动态模板 ：核心机制，页面就是模板
+    - 静态模板：单独把模板放一块，
 
 
 #### 算法押题  
 1. 排序算法（背诵冒泡排序、选择排序、计数排序、快速排序、插入排序、归并排序）
 2. 二分查找法
-3. 翻转二叉树
-4. 把上面三个背一下，算法题必过。
     
 #### 安全押题
 
@@ -356,19 +391,20 @@
     - xxx 模块就是按需加载的
 
 2. 转译速度慢什么办？
+    - webpack 慢 怎么办，搜一下
 3. 写过 webpack loader 吗？[参考](http://www.alloyteam.com/2016/01/webpack-loader-1/)
 
 
-### 发散题
+#### 发散题
 1. 从输入 URL 到页面展现中间发生了什么？
     - DNS 查询 DNS 缓存
     - 建立 TCP 连接（三次握手）连接复用
     - 发送 HTTP 请求（请求的四部分）
     - 后台处理请求
-    - 监听 80 端口
-    - 路由
-    - 渲染 HTML 模板
-    - 生成响应
+        - 监听 80 端口
+        - 路由
+        - 渲染 HTML 模板
+        - 生成响应
     - 发送 HTTP 响应
     - 关闭 TCP 连接（四次挥手）
     - 解析 HTML
@@ -413,9 +449,9 @@
     var b = a;
     a.x = a = {n:2};
     
-    问 a.x 是多少？
+    问 a.x 是多少？ // undefined a.x是之前的a，现在的a.x不存在
     ```
-3. (a ==1 && a== 2 && a==3) 可能为 true 吗？
+3. (a == 1 && a== 2 && a==3) 可能为 true 吗？
     
     ```
     a = {
@@ -426,4 +462,11 @@
       }
     }
     ```
+
+### 学习网站
+1. stack Overflow
+2. 掘金
+3. 谷歌
+4. CNode社区
+5. 知乎
 
