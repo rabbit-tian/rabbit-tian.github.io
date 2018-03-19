@@ -148,19 +148,54 @@
     - 目的：把异步代码写成同步代码
 
     ```
-    function resultAfter2seconds() {
-        result new Promise ( resolve => {
+    function returnPromise() {
+        result new Promise ( (resolve,reject) => {
             setTimeout(() => {
                 resolve('resolved')
             },2000)
         })
     } 
     
-    async function asyncCall () {
-        let result = await resultAfter2seconds()
-    }
+    // 以前写法
+    returnPromise().then( (result) => {
+        result = 'resolved'
+    })
     
+    // 异步变同步
+    async function asyncCall () {
+        let result = await returnPromise()
+    }
     asyncCall()
     
+    ```
+
+8. 如何实现深拷贝
+    - JSON 来深拷贝
+        - 缺点：JSON不支持函数，引用，undefined，正则regexp，Date...
+    
+        ```
+        var a = {...}
+        var b = JSON.parse(JSON.stringify(a))
+        ```    
+    - 使用递归的方式拷贝,查找完整代码
+    
+    ```
+    function clone (object) {
+        var object2
+        // 先判断是不是普通类型
+        if (!(object instanceof Object)) {
+        }else if (object instanceof Array) {
+            object2 = []
+        }else if (object instanceof Function ) {
+            object2 = eval(object.toString())
+        }else if (object instanceof Object) {
+            object2 = {}
+        }
+        
+        for(){
+            object2[key] = clone(object[key])
+        }
+        return object2
+    }
     ```
 
