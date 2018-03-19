@@ -48,9 +48,55 @@
             zoom: a;  // 兼容IE 加
         }
         ```
+        
+        
 ### JS押题
+
 1. JS数据类型
     - number(NaN)，string，boolean，null,undefined,object,symbol
     - object包括：数组，函数，正则，日期
 
+2. (必考)Promise怎么使用？
+    - then: 
+    
+        ```
+        $.ajax().then(成功函数，失败函数)
+        ```
+    - 链式: 只要前面函数没有报错，都会调用成功函数2或者失败函数2
+        
+        ```
+        $.ajax().then(成功函数1，失败函数1).then(成功函数2，失败函数2)
+        ```
+    - 如何自己生成promise
+    
+        ```
+         function xxx() {
+            return new Promise() {
+                setTimeout(function (resolve,reject) {
+                    resolve() 或者 reject（）
+                },3000)
+            }
+         }
+         
+         xxx().then(...)
+        ```
+
+3. (必考) ajax 手写以下 (四步)
+    
+    ```
+    let xhr = new XMLHttpRequest()
+    xhr.open('GET','/xxx')
+    xhr.onreadystatechange =function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            console.log(xhr.responseText)
+        }
+    }
+    xhr.send('a=1&b=2')
+    ```
+
+4. (必考) 闭包是什么
+    
+    ```
+    function 
+    ```
 
