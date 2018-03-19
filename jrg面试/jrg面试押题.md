@@ -221,6 +221,27 @@
     
 14. `==` 相关题目放弃
     - (a == 1 && a == 2 && a == 3)可能成为true吗？
-    - 
+    - 可能
+    
+    ```
+    a = {
+        value: 0,
+        toString() {
+            a.value += 1
+            return a.value
+        }
+    }
+    a == 1
+    a == 2
+    a == 3
+    ```
+    
+    
+### DOM押题
+1. DOM事件模型 [DOM](http://jsbin.com/raqakog/1/edit?js,console,output)
+    1. 冒泡
+    2. 捕获
+    3. 如果这个元素是被点击的元素,那么捕获不一定在冒泡之前，顺序是由监听顺序决定的   
+2.  
 
 
