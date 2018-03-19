@@ -199,3 +199,28 @@
     }
     ```
 
+9. 如何实现数组去重
+    - 计数排序的逻辑(一般if else的方法，只能正整数)
+    - Set去重 `Array.from(new Set(arr))`
+
+10. 如何用正则实现 string.trim()?
+    
+    ```
+    function trim(string){
+        return string.replace(/^\S+|\s+$/,'')
+    }
+    ```
+
+11. JS原型是什么？ [原型](https://zhuanlan.zhihu.com/p/23090041?refer=study-fe)
+    - 比如数组 a = [1,2,3],自身并没有 push 方法，但却可以使用，a通过 `__proto__ ` 找到到 `Array.prototype`,继而找到 `Array.prototype.push` 这个方法，`Array.prototype`中还有许多其他方法，如 pop，slice，splice，join等，`Array.prototype`就是 数组a的原型
+12. ES6的class
+    - MDN class章节
+
+13. jS如何实现继承
+    - 原型链
+    
+14. `==` 相关题目放弃
+    - (a == 1 && a == 2 && a == 3)可能成为true吗？
+    - 
+
+
