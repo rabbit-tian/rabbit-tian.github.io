@@ -936,30 +936,7 @@
 9. jQ中如何对选择器进行性能优化
      
    
-    
 
-#### vue押题
-1. （必考）Vue 有哪些生命周期钩子函数？
-    - [看文档](https://cn.vuejs.org/v2/api/#选项-生命周期钩子)
-    - （必考）Vue 如何实现组件通信？
-2. （必考）Vue 如何实现组件通信？
-    - 父子通信（使用 Prop 传递数据、使用 v-on 绑定自定义事件）
-    - 爷孙通信（通过两对父子通信，爷爸之间父子通信，爸儿之间父子通信）
-    - [兄弟通信（new Vue() 作为 eventBus）](https://cn.vuejs.org/v2/guide/components.html#%E9%9D%9E%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E7%9A%84%E9%80%9A%E4%BF%A1)
-
-3. Vuex 的作用是什么？
-    - [看文档](https://vuex.vuejs.org/zh-cn/intro.html)
-4. VueRouter 路由是什么？
-    - 看文档
-
-5. Vue 的双向绑定是如何实现的？有什么缺点？
-    - [看文档](https://cn.vuejs.org/v2/guide/reactivity.html)
-6. Computed 计算属性的用法？跟 Methods 的区别。
-    - [参考](https://zhuanlan.zhihu.com/p/33778594)
-7. MVVM框架的核心思想
-    -  module，view，viewModule通过双向绑定，操作数据来驱动ui
-    - 动态模板 ：核心机制，页面就是模板
-    - 静态模板：单独把模板放一块，
 
 
 #### 算法押题  

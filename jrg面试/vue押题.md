@@ -1,3 +1,27 @@
+#### vue押题
+1. （必考）Vue 有哪些生命周期钩子函数？
+    - [看文档](https://cn.vuejs.org/v2/api/#选项-生命周期钩子)
+    - （必考）Vue 如何实现组件通信？
+2. （必考）Vue 如何实现组件通信？
+    - 父子通信（使用 Prop 传递数据、使用 v-on 绑定自定义事件）
+    - 爷孙通信（通过两对父子通信，爷爸之间父子通信，爸儿之间父子通信）
+    - [兄弟通信（new Vue() 作为 eventBus）](https://cn.vuejs.org/v2/guide/components.html#%E9%9D%9E%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E7%9A%84%E9%80%9A%E4%BF%A1)
+
+3. Vuex 的作用是什么？
+    - [看文档](https://vuex.vuejs.org/zh-cn/intro.html)
+4. VueRouter 路由是什么？
+    - 看文档
+
+5. Vue 的双向绑定是如何实现的？有什么缺点？
+    - [看文档](https://cn.vuejs.org/v2/guide/reactivity.html)
+6. Computed 计算属性的用法？跟 Methods 的区别。
+    - [参考](https://zhuanlan.zhihu.com/p/33778594)
+7. MVVM框架的核心思想
+    -  module，view，viewModule通过双向绑定，操作数据来驱动ui
+    - 动态模板 ：核心机制，页面就是模板
+    - 静态模板：单独把模板放一块，
+
+
 ### 双向绑定
 1. 了解mvvm框架吗?
     - 了解，vue框架
@@ -65,3 +89,5 @@
     - 在观察者对象watcher中建立update函数，就是回调函数，
     - 观察者对象watcher 监听对象是否有值，有值的话，是一个观察者，然后放在观察者列表中，当它变化时，再通知观察者对象
 4. 要观察某一个对象，先实例化一个watcher，调get函数，把我想观察的对象放在数据监听的列表中，在后续操作中，任何操作都会触发watcher中的update回调函数，update执行后，v**iew就会执行操作
+
+
