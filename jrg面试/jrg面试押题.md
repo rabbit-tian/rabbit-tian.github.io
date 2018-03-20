@@ -34,8 +34,21 @@
     - 水平垂直居中
 
 5. BFC是什么？
-    - overflow:hidden; 清除浮动 （用.clearfix 清除浮动）
-    - overflow:hidden; 取消父子 margin 合并（用 父级+ padding-top：0.1px；）
+   - BFC规定了内部的Block Box如何布局。
+   - 定位方案：
+        - 在BFC这个元素的垂直方向的边距会发生重叠。
+        - BFC的区域不会与浮动元素的BOX重叠。
+        - BFC是一个独立的容器，外面的元素不会影响里面的元素。
+        - 计算BFC高度的时候浮动元素也会参与计算。
+        
+    - 满足下列条件之一就可触发BFC
+        - float： 不为none
+        - position：不为 relative或static
+        - overflow：hide / auto
+        - display: inline-block,table,table-cell
+    - BFC的使用场景
+        - 左侧固定宽高，右侧高度自适应，此时右侧BFC，防止内容溢出到左侧下方
+        - 清除浮动
 
 6. 如何清除浮动
     - 父级加 Height ：只适合固定高度
@@ -52,6 +65,9 @@
             zoom: a;  // 兼容IE 加
         }
         ```
+7. 上下margin重合的问题     
+   - 父子级，margin冲出去: 父级加 overflow: hidden；或者父级 设置padding-top: 0.1px，形成障碍
+   - 兄弟级，给每个元素套个父级，父级加 overflow: hidden；或者父级 设置padding-top: 0.1px，形成障碍
         
 7. position：的值
     - absoulte: 基于有定位属性的父元素定位

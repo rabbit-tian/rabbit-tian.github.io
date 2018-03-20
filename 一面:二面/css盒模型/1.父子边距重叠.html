@@ -12,12 +12,15 @@
         }
         .box {
             /* BFC 解决方案，创建格式化上下文 */
-            overflow: hidden;
+            /* overflow: hidden; */
+            height: 200px;
             background-color: red;
+            padding-top: 0.1px;
         }
         .child {
             margin-top: 20px;
-            height: 100px;
+
+            height: 30px;
             background-color: yellow;
         }
     </style>
