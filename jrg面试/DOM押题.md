@@ -32,7 +32,7 @@
     ```
 
 
-1. DOM事件模型 [DOM](http://jsbin.com/raqakog/1/edit?js,console,output)
+4. DOM事件模型 [DOM](http://jsbin.com/raqakog/1/edit?js,console,output)
     - DOM事件流  
         - 捕获阶段
         - 目标阶段
@@ -42,11 +42,11 @@
         - 如何获取html标签：Document.documentElement
         -  window => document => html标签 => body => 父级元素 => 自己元素 => 目标元素
         
-2. 移动端的触摸事件了解吗？
+5. 移动端的触摸事件了解吗？
     - touchstart touchmove touchend touchcancel
     - 模拟swipe事件: 记录两次touchmove的位置差，如果最后一次在前一次的右边，说明向右滑了
 
-3. 事件委托是什么，有什么好处？ [事件委托](https://github.com/FrankFang/wheels/blob/master/lib/dom/index.js)
+6. 事件委托是什么，有什么好处？ [事件委托](https://github.com/FrankFang/wheels/blob/master/lib/dom/index.js)
     - 假设父元素有4个儿子，我不监听4个儿子，而是监听父元素，看触发的事件元素是哪个儿子，触发后，事件冒泡到监听元素上，然后监听元素捕捉到事件，然后处理
     - 好处：可以监听动态生成的元素，省监听器
     
@@ -66,8 +66,6 @@
         return element
       }
     ```
- 
-6. 如何定义一个事件
 
 
 

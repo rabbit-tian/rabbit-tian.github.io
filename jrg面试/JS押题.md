@@ -54,7 +54,7 @@
     - typeof(null) => "object"
 
 
-2. (必考)Promise怎么使用？
+6. (必考)Promise怎么使用？
     - then: 
     
         ```
@@ -79,7 +79,7 @@
          xxx().then(...)
         ```
 
-3. (必考) ajax 手写以下 (四步)
+7. (必考) ajax 手写以下 (四步)
     
     ```
     let xhr = new XMLHttpRequest()
@@ -108,7 +108,7 @@
     adder() // n === 2
     console.log(n) n is not defined
     ```
-5. (必考) this指的是什么 [this](http://web.jobbole.com/91014/)
+8. (必考) this指的是什么 [this](http://web.jobbole.com/91014/)
     - fn(): this指的是window
     - fn() 是 strict mode(严格模式)，this是undefined
     - a.b.c.fn() this: a.b.c
@@ -116,7 +116,7 @@
     - （）=> console.log(this) this 就是外面的this
 
 
-6. (必考) 立即执行函数
+9. (必考) 立即执行函数
     - 目的:造出一个作用域，防止污染全局变量
 
     ```
@@ -142,7 +142,7 @@
     }
     ```
 
-7. async/await 语法了解吗？
+10. async/await 语法了解吗？
     - 目的：把异步代码写成同步代码
 
     ```
@@ -167,7 +167,7 @@
     
     ```
 
-8. 如何实现深拷贝
+11. 如何实现深拷贝
     - JSON 来深拷贝
         - 缺点：JSON不支持函数，引用，undefined，正则regexp，Date...
     
@@ -197,11 +197,11 @@
     }
     ```
 
-9. 如何实现数组去重
+12. 如何实现数组去重
     - 计数排序的逻辑(一般if else的方法，只能正整数)
     - Set去重 `Array.from(new Set(arr))`
 
-10. 如何用正则实现 string.trim()?
+13. 如何用正则实现 string.trim()?
     
     ```
     function trim(string){
@@ -209,10 +209,10 @@
     }
     ```
 
-11. JS原型是什么？ [原型](https://zhuanlan.zhihu.com/p/23090041?refer=study-fe)
+14. JS原型是什么？ [原型](https://zhuanlan.zhihu.com/p/23090041?refer=study-fe)
     - 比如数组 a = [1,2,3],自身并没有 push 方法，但却可以使用，a通过 `__proto__ ` 找到到 `Array.prototype`,继而找到 `Array.prototype.push` 这个方法，`Array.prototype`中还有许多其他方法，如 pop，slice，splice，join等，`Array.prototype`就是 数组a的原型
 
-12. 原型，构造函数，实例，原型链
+15. 原型，构造函数，实例，原型链
     - 解释Person、 prototype、__proto__、p、constructor之间的关联。
         - Person: 构造函数(类)
         - prototype:构造函数原型
@@ -253,7 +253,7 @@
             - constructor属性的作用，是分辨原型对象到底属于哪个构造函数
     ![原型](media/%E5%8E%9F%E5%9E%8B.jpg)
 
-13. instanceof的原理
+16. instanceof的原理
     1. instanceof : p instanceof Person , 判断p是不是Person的实例，判断指定对象是否为某个构造函数的实例
     2. 原理：判断 p.__proto__ 和 Person.prototype 两个属性 是不是引用同一个地址
     3. p instanceof Person => true
@@ -262,7 +262,7 @@
         - p.__proto__.constructor === Person =>   true
         - p.__proto__.constructor === Object =>   false
 
-14. new运算符
+17. new运算符
     - 创造一个空对象 p1 = {}
     - 构造函数被执行，传入相应参数
     - 如果构造函数返回了一个对象 ，此对象会取代new出来的结果，如果没有返回对象，那么new出来的结果为步骤一创建的对象
@@ -288,7 +288,7 @@
             let p2 = new Peple('杨')
             p2.sayName() // 调用里面的方法
         ```
-15. 创建对象有几种方法
+18. 创建对象有几种方法
     1. let obj1 = {a:1}（字面量方法）
     2. let obj2 = new Object({a:1})
     3. 构造函数的方式
@@ -304,10 +304,10 @@
         let obj4 = Object.create(num)
         ```
 
-12. ES6的class
+19. ES6的class
     - MDN class章节
 
-13. 类的声明和生成实例
+20. 类的声明和生成实例
 
     ```
     // 类的声明
@@ -328,7 +328,7 @@
     let a2 = new Animal2
     ```
 
-13. jS如何实现继承
+21. jS如何实现继承
     - 借助构造函数 和 call 方法实现继承
         - 原理：通过call方法将父类的构造函数this指向子构造函数的实例上去，继而实现继承
         - 缺点：只能实现部分继承，不能继承父类原型上的属性和方法
@@ -420,7 +420,7 @@
         
         
     
-14. `==` 相关题目放弃
+22. `==` 相关题目放弃
     - (a == 1 && a == 2 && a == 3)可能成为true吗？
     - 可能
     
