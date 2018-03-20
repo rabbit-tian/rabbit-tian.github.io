@@ -6,8 +6,6 @@
 2. meta viewport 是做什么用的，怎么写？
     - `<meta name="viewport" content="width=device-width,user-scalable=no,iniyial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">`
     - 设备宽度，用户不能放大缩小，控制页面在移动端不要缩放显示
-3. canvas 元素是干什么的？
-    - MDN 的canvas
 
 
 ### CSS押题
@@ -62,8 +60,17 @@
 11. css优化，提高性能的方法
 12. 浏览器是如何解析css选择器的
    
-### Jquery的知识
-1.    
+### jquery押题
+1. onload()函数和JQuery中`$(document).read(function () {})` 和 `$(function () {})` 的区别
+2. jQuery中遍历节点的方法有哪些
+3. jQuery中操作属性和样式的方法有哪些
+4. jQuery中如何克隆(复制)和删除节点
+5. jQuery中如何进行内容操作
+6. jQ中html(),text(),val()的区别
+7. jQ中find(),has(),filter()的区别
+8. JQ中closet()和parents()的区别
+9. jQ中如何对选择器进行性能优化
+    
     
         
 ### JS押题
@@ -272,18 +279,7 @@
 6. 如何定义一个事件
 
 
-### jquery押题
-1. onload()函数和JQuery中`$(document).read(function () {})` 和 `$(function () {})` 的区别
-2. jQuery中遍历节点的方法有哪些
-3. jQuery中操作属性和样式的方法有哪些
-4. jQuery中如何克隆(复制)和删除节点
-5. jQuery中如何进行内容操作
-6. jQ中html(),text(),val()的区别
-7. jQ中find(),has(),filter()的区别
-8. JQ中closet()和parents()的区别
-9. jQ中如何对选择器进行性能优化
-    
-    
+
     
 #### HTTP押题
 1. HTTP状态码是什么
