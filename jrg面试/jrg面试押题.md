@@ -24,11 +24,6 @@
     - [垂直居中](https://jscode.me/t/topic/1936)
     - 水平垂直居中
 
-4. 选择器优先级如何确定
-    - 选择器越具体，优先级越高， #div > .div
-    - 同样优先级，写在后面的覆盖前面的
-    - color: red !importanr; 优先级最高
-
 5. BFC是什么？
     - overflow:hidden; 清除浮动 （用.clearfix 清除浮动）
     - overflow:hidden; 取消父子 margin 合并（用 父级+ padding-top：0.1px；）
@@ -52,28 +47,47 @@
 7. position：的值
     - absoulte: 基于有定位属性的父元素定位
     - relative: 基于自己本身定位
-    - fixed: 基于页面定位  
+    - fixed: 基于页面定位
+8. display有哪些值？说明他们的作用?
+    - inline（默认）–内联
+    - none–隐藏
+    - block–块显示
+    - table–表格显示
+    - list-item–项目列表
+    - inline-block  
     
 8. 如何隐藏一个元素（不少于7中）
 9. 将footer固定在底部的方法
 10. css预处理器，sass中常用的有哪些
 11. css优化，提高性能的方法
 12. 浏览器是如何解析css选择器的
-   
-### jquery押题
-1. onload()函数和JQuery中`$(document).read(function () {})` 和 `$(function () {})` 的区别
-2. jQuery中遍历节点的方法有哪些
-3. jQuery中操作属性和样式的方法有哪些
-4. jQuery中如何克隆(复制)和删除节点
-5. jQuery中如何进行内容操作
-6. jQ中html(),text(),val()的区别
-7. jQ中find(),has(),filter()的区别
-8. JQ中closet()和parents()的区别
-9. jQ中如何对选择器进行性能优化
+13. css选择器优先级如何确定
+    - 选择器越具体，优先级越高， #div > .div
+    - 同样优先级，写在后面的覆盖前面的
+    - color: red !importanr; 优先级最高
+14. CSS选择器有哪些？哪些属性可以继承？
+    - CSS选择符：id选择器(#myid)、类选择器(.myclassname)、标签选择器(div, h1, p)、相邻选择器(h1 + p)、子选择器（ul > li）、后代选择器（li a）、通配符选择器（*）、属性选择器（a[rel=”external”]）、伪类选择器（a:hover, li:nth-child）
+
+    - 可继承的属性：font-size, font-family, color
+
+    - 不可继承的样式：border, padding, margin, width, height
+
+    - 优先级（就近原则）：!important > [ id > class > tag ]
+    - !important 比内联优先级高
+14. CSS3新增伪类有那些?
+    - p:first-of-type 选择属于其父元素的首个元素
+    - p:last-of-type 选择属于其父元素的最后元素
+    - p:only-of-type 选择属于其父元素唯一的元素
+    - p:only-child 选择属于其父元素的唯一子元素
+    - p:nth-child(2) 选择属于其父元素的第二个子元素
+    - :enabled :disabled 表单控件的禁用状态。
+    - :checked 单选框或复选框被选中。
+    
+15.    
     
     
         
-### JS押题
+### Javascript押题
 
 1. JS数据类型
     - number(NaN)，string，boolean，null,undefined,object,symbol
@@ -319,6 +333,21 @@
     - JSONP
     - CORS
     - postMessage 看一下 MDN
+   
+   
+     
+### jquery押题
+1. onload()函数和JQuery中`$(document).read(function () {})` 和 `$(function () {})` 的区别
+2. jQuery中遍历节点的方法有哪些
+3. jQuery中操作属性和样式的方法有哪些
+4. jQuery中如何克隆(复制)和删除节点
+5. jQuery中如何进行内容操作
+6. jQ中html(),text(),val()的区别
+7. jQ中find(),has(),filter()的区别
+8. JQ中closet()和parents()的区别
+9. jQ中如何对选择器进行性能优化
+     
+   
     
 
 #### vue押题
