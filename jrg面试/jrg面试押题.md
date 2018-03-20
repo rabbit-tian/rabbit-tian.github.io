@@ -9,12 +9,21 @@
 
 
 ### CSS押题
+1. 浏览器内核
+    - IE浏览器内核、百度浏览器：Trident内核，也是俗称的IE内核；
+    - Chrome浏览器内核: Chrome内核,以前是Webkit内核，现在是Blink内核；
+    - Firefox浏览器内核: Gecko内核，俗称Firefox内核；
+    - Safari浏览器内核：Webkit内核；
+    - Opera浏览器内核: 最初是自己的Presto内核，后来加入谷歌大军，从Webkit又到了Blink内核；
+    - 360浏览器、猎豹浏览器内核：IE+Chrome双内核；
+    - 搜狗、遨游、QQ浏览器内核：Trident（兼容模式）+Webkit（高速模式）；
+
 1. 说一下盒模型 box-sizing
     - content-box(标准): 宽高是内容区宽高
     - border-box(IE): 宽高包括 padding值和border值 (兼容IE时不适用)
     - 解释一下弹性盒模型flexbox，以及使用场景
 2. css reset 和 normalize.css 有什么区别？
-    - css reset：样式重置，抛弃默认样式
+    - css reset：样式重置，抛弃默认样式，因为浏览器的兼容问题，不同浏览器对有些标签的默认值是不同的，如果没对CSS初始化往往会出现浏览器之间的页面显示差异。
     - normalize.css：让所有浏览器的标签都和标准规定的默认样式一致
 3. (必考)如何居中
     - 水平居中
@@ -47,7 +56,7 @@
 7. position：的值
     - absoulte: 基于有定位属性的父元素定位
     - relative: 基于自己本身定位
-    - fixed: 基于页面定位
+    - fixed: 基于可是窗口定位
 8. display有哪些值？说明他们的作用?
     - inline（默认）–内联
     - none–隐藏
@@ -57,6 +66,10 @@
     - inline-block  
     
 8. 如何隐藏一个元素（不少于7中）
+    - dispaly: none;  不显示对应的元素，在文档布局中不再分配空间（回流+重绘)
+    - visibility: hidden;  隐藏对应元素，在文档布局中仍保留原来的空间（重绘）
+    - 
+    
 9. 将footer固定在底部的方法
 10. css预处理器，sass中常用的有哪些
 11. css优化，提高性能的方法
@@ -83,7 +96,22 @@
     - :enabled :disabled 表单控件的禁用状态。
     - :checked 单选框或复选框被选中。
     
-15.    
+15. CSS3有哪些新特性？
+    - RGBA和透明度
+    - background-image background-origin(content-box/padding-box/border-box) background-size background-repeat
+    - word-wrap（对长的不可分割单词换行）word-wrap：break-word
+
+    - 文字阴影：text-shadow： 5px 5px 5px #FF0000;（水平阴影，垂直阴影，模糊距离，阴影颜色）
+
+    - font-face属性：定义自己的字体
+
+    - 圆角（边框半径）：border-radius 属性用于创建圆角
+
+    - 边框图片：border-image: url(border.png) 30 30 round
+
+    - 盒阴影：box-shadow: 10px 10px 5px #888888
+
+    - 媒体查询：定义两套css，当浏览器的尺寸变化时会采用不同的属性   
     
     
         
