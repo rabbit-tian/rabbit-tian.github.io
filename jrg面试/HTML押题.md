@@ -173,13 +173,18 @@
     1. 浏览器渲染过程
         1. HTML按照HTML规则和解释器转成 DOM Tree
             - DOM Tree：二叉树结构
-        2. Css按照Css规则和解释器转成 CSSOM tree
+        2. Css按照Css规则和解释器转成 CSSOM tree(样式结构体)
             - CSSOM tree: 按照树形结构一个个增加样式
         3. DOM Tree 和 CCSSOMSS Tree 一整和形成 Render Tree
+            - Render Tree不包含隐藏的节点,(比如display:none的节点，还有head节点)注意 visibility:hidden隐藏的元素还是会包含到render tree中,visibility:hidden 会影响布局(layout)，会占有空间
         4. Render Tree 经过 Layout 计算DOM的具体位置和样式
+            - 当render tree中的一部分(或全部)因为元素的规模尺寸，布局，隐藏等改变而需要重新构建。这就称为回流(reflow)
+            - 完成回流后，浏览器会重新绘制受影响的部分到屏幕中，该过程成为重绘。
+            - 当render tree中的一些元素需要更新属性，而这些属性只是影响元素的外观，风格，而不会影响布局的，比如background-color。则就叫称为重绘。
+            - 回流必将引起重绘，而重绘不一定会引起回流
         5. Painting 进行 画图，呈现内容
         6. Display 在浏览器上看到页面效果
-    2. 重排Reflow
+    2. 回流/重排 Reflow
         1. DOM结构中各个元素都有自己的盒子（模型），这些都需要浏览器根据各种样式来计算，并根据计算结果将元素放到它该放的位置上，这个过程称为reflow
         2. 何时触发重排
             - 当修改，删除，增加DOM节点的时候，会发生reflow和repaint

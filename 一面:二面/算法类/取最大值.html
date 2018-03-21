@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    // 方法一：apply,call
+    var arr = [7,2,0,-3,5];
+    var max = Math.max.apply(null,arr);
+    // var max = Math.max.call(null,arr);
+    console.log(max)
+
+    //方法二： sort()+reverse()
+    //sort()排序默认为升序，reverse()将数组掉个
+    var max3 = arr.sort().reverse()[0];
+    console.log(max3)
+
+    // for循环
+    function max4(arr){
+       var num = arr[0];
+       for(var i=0;i<arr.length;i++){
+           if(num < arr[i]){
+               num = arr[i]
+           }
+       }
+       return num;
+   }
+   console.log(max4(arr))
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        function findSecondNum(arr) {
+            // 假设 最大值是第一个，第二大值是第二个，然后拿数组的每一项进行对比，
+            // 两种情况，每一项的值大于最大值，或者在两者之间
+            let max = arr[0]
+            let second = arr[1]
+            for (let i = 0; i< arr.length;i++) {
+                if (arr[i] > max) {
+                    second = max
+                    max = arr[i]
+                }else if (arr[i] < max && arr[i] > second) {
+                    second = arr[i]
+                }
+            }
+            return second
+
+        }
+
+        console.log(findSecondNum([8,2,5,7,4,9]))
+    </script>
+</body>
+
+</html>
