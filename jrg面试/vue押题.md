@@ -66,7 +66,7 @@
 ### 双向绑定
 1. 了解mvvm框架吗?
     - 了解，vue框架
-2. 对mvvm的认识
+2. 对mvvm的认识--单向数据流
     - 先聊MVC，model(数据保存)，view(用户界面)，controller(业务逻辑)
         - View 传送指令到 Controller
         - Controller 完成业务逻辑后，要求 Model 改变状态
@@ -78,10 +78,11 @@
 3. mvvm和mvc的区别
     - mvc
         - view(用户界面)=>controller(业务逻辑)=> model(数据保存)=>view(用户界面)
-        - 所有通信都是单向的。
+        - 所有通信都是单向的，单向数据流
     - mvvm
-        - 各部分之间的通信，都是双向的。
+        - 各部分之间的通信，都是双向的，双向数据流
         - View 与 Model 不发生联系,都通过 ViewModel 传递
+        - ViewModel的职责就是把model对象封装成可以显示和接受输入的界面数据对象。
         - 采用双向绑定（data-binding）：View的变动，自动反映在 ViewModel
 4. 双向绑定的原理 [看文档](https://cn.vuejs.org/v2/guide/reactivity.html)
     - 双向：正向，data到view方向，数据驱动页面；反向，页面内容变了，映射到data数据中
