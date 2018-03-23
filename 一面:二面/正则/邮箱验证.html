@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+// 大概需要验证的邮箱
+/*
+23132132@qq.com          ^([1-9]\d{5,9})
+13888888888@139.com      ^(1[34578]\d{9})
+dsds_dsd@yeah.net
+dsds_dsd@163.com
+dsds@gmail.com
+zhipeng@miaov.com
+ndsd-dsdsd@hotmail.com   ^([A-Za-z][\w\-]{5,16})
+*/
+
+// qq验证
+let qq = /^[1-9]\d{4,9}$/
+
+let str="1010844564"
+
+console.log(qq.test(str)) // true
+
+// 邮箱
+let str2 = "13527264656@139.com"
+
+let email = /^[A-Za-z0-9_-]+@[A-Za-z0-9-_]+(\.[A-Za-z0-9-_]+)+$/
+// let email = /^[A-Za-z0-9_-]+@[A-Za-z0-9_-]+(\.[A-Za-z0-9_-]+)+$/
+
+console.log(email.test(str2)) // true
+
+</script>
+</body>
+</html>
