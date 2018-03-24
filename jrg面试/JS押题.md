@@ -1,6 +1,6 @@
 ### Javascript押题
 
-1. JS数据类型
+1. JS数据类型（基本类型，复杂类型）
     - number(NaN)，string，boolean，null,undefined,object,symbol
     - object包括：数组，函数，正则，日期
     - Symbol,ES6, 为了保证属性名的独一无二而被引入
