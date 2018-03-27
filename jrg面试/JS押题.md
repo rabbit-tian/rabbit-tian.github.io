@@ -205,7 +205,7 @@
     
     ```
     function trim(string){
-        return string.replace(/^\S+|\s+$/,'')
+        return string.replace(/^\s+|\s+$/,'')
     }
     ```
 
