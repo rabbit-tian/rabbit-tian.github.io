@@ -3,6 +3,6 @@
 2. 格式化代码：shift + option + f
 3. 全局搜索：command + shift + f
 4. command + b(bar)：切换侧边栏
-5. 
+5. 赋值一整行：shift + option + ↑/↓
 
 
