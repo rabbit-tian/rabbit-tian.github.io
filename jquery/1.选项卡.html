@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul,li{
+            list-style: none;
+        }
+        .box{
+
+        }
+        .clearfix:after{
+            content: '';
+            clear: both;
+            display: block;
+        }
+        .article li{
+            float: left;
+            width: 100px;
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+            background-color: #ccc;
+        }
+        .article li.active{
+            background-color: red;
+        }
+        .panel{
+            position: relative;
+            width: 300px;
+            height: 300px;
+        }
+        .panel li{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+            background-color: pink;
+        }
+        .panel li.active{
+            display: block;
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul class="article clearfix">
+            <li class="active">按钮1</li>
+            <li>按钮2</li>
+            <li>按钮3</li>
+        </ul>
+
+        <ul class="panel">
+            <li class="active">板块1</li>
+            <li>板块2</li>
+            <li>板块3</li>
+        </ul>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+    <script>    
+        let $articleLis = $('.article li')
+        let $panels = $('.panel li')
+        $articleLis.click(function () {
+            // 样式大清洗
+            $articleLis.removeClass('active')
+            $panels.removeClass('active')
+
+            $(this).addClass('active')
+            let _index = $(this).index()
+            $panels.eq(_index).addClass('active')
+        })
+    
+    </script>
+</body>
+</html>

@@ -10,7 +10,13 @@
             width: 200px;
             height: 200px;
             background-color: red;
-            animation: move 1s;
+            animation-name: move; /*运动对象*/
+            animation-duration: 1s; /*执行时间*/
+            animation-timing-function: initial; /*运动类型*/
+            animation-iteration-count: 2; /*循环次数*/
+            animation-direction: initial; /*运动方向*/
+            animation-play-state: running; /*running 和 paused*/
+            animation-fill-mode: backwards; /*运动最终停止的位置 forwards、both、backwards*/
         }
         @keyframes move {
             /* from {
@@ -24,12 +30,8 @@
                 width: 200px;
             }
 
-            50%{
+            100% {
                 width: 800px;
-            }
-
-            100%{
-                width: 500px;
             }
         }
     </style>
