@@ -8,7 +8,9 @@
 2. promise 原型方法和静态方法
     > new Promise ((res,rej) => {})
     - Promise.prototype.then
+        - return 新的Promise
     - Promise.prototype.catch
+        - return 新的Promise
     - Promise.resolve
     - Promise.reject
     - Promise.all
