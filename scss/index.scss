@@ -1,0 +1,187 @@
+// 变量
+
+$width: 300px;
+$bgc: red yellow; // 多值变量
+.box{
+    width: $width;
+    background-color: nth($bgc,1);
+}
+
+// 作用域
+.box{
+    $width: 100px;
+    width: $width; // 100, 先找自己
+}
+
+// 嵌套
+
+.list{
+    $lh: 60px;// 行高变量
+    li{
+        height: 60px;
+        line-height: $lh;
+        a{
+            
+        }
+    }
+}
+// 属性嵌套
+
+.box {
+    // 复合样式
+    font: {
+        style: normal;
+        size: 14px;
+        weight: bold;
+        family: "黑体"
+    }
+}
+
+// @at-root：不想留根节点的 
+.box {
+    @at-root .box-news{
+        width: $width;
+    }
+
+    @at-root {
+        .box1{
+            width: $width;
+        }
+        .box2{
+            width: $width;
+        }
+    }
+}
+
+// &_cont   =>  .box_count
+.box{
+    &_cont {
+        width: $width;
+    }
+} 
+
+// 混合/循环 @mixin 声明
+@mixin opa(){
+    opacity: .5;
+    filter: alpha(opacity=50);
+}
+// @include 调用   @mixin 声明的东西
+.demo{
+    @include opa()
+}
+
+// if 判断
+
+@mixin sj($fx:top,$size:10px,$color:red) {
+    @if ($fx == top) {
+        width: 200px;
+        border-color: transparent transparent $color transparent;
+    }
+    @else if ($fx == right) {
+        width: 300px;
+        border-color: transparent transparent transparent $color;
+    }
+    @else if ($fx == left) {
+        width: 400px;
+        border-color: transparent $color transparent transparent;
+    }
+    @else if ($fx == bottom) {
+        width: 500px;
+        border-color: $color transparent transparent transparent;
+    }
+    width: 0;
+    height: 0;
+    border-width: $size;
+}
+.demo {
+    @include sj(right);
+}
+
+// 继承 @extend
+.fl {
+    float: left;
+}
+.box {
+    @extend .fl;
+}
+
+// 占位选择器 ，在用到的时候才会被编译出来
+%clearflx{
+    *zoom: 1;
+    &:after{
+        content: '';
+        display: block;
+        clear: both;
+    }
+}
+.box {
+    width: 300px;
+    height: 300px;
+    @extend %clearflx;
+}
+
+// 字符串插值
+$icon: '../images/icon/';
+.content{
+    background: url(#{$icon}a.jpg) left top no-repeat;
+}
+
+// 运算符的前后必须要有空格
+.box {
+    width: $width / 2;
+    color: #F00 - 100;
+}
+
+// for 循环  应用于背景图
+
+// 1-10
+@for $i from 1 through 10 {
+    .item_#{$i}{
+        background-position: -($i - 1) * 20px 0;
+    }
+}
+// 1-9
+@for $i from 1 to 10 {
+    .item_#{$i}{
+        background-position: -($i - 1) * 20px 0;
+    }
+}
+$a:5;
+@while ($a >= 1) {
+    .aaa_#{$a} {
+        width: 20px * $a
+    }
+    $a: $a - 1;
+}
+/*
+.aaa_5 {width: 100px;}
+.aaa_4 {width: 80px;}
+.aaa_3 {width: 60px;}
+.aaa_2 {width: 40px;}
+.aaa_1 {width: 20px;}
+
+*/
+
+// each
+
+$icon_name:user,pass,checked,select;
+@each $i in $icon_name{
+    .icon_#{$i}{
+        width: 10px;
+    }
+}
+/*
+.icon_user{width: 10px;}
+.icon_pass{width: 10px;}
+.icon_checked{width: 10px;}
+.icon_select{width: 10px;}
+
+*/
+
+// 三元运算符
+
+// 总结
+
+@mixin 和 @include 组合使用
+
+占位符 %clearfix 和 @extend 组合使用
