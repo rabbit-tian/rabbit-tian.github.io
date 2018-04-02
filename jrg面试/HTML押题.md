@@ -1,7 +1,8 @@
 ### HTTP押题
 
-1. (必考)你是如何理解HTML语义化的？
+1. (必考)你是如何理解HTML语义化和可读性的？
     - 合适的标签干合适的事，各尽其职，比如头部用header，主体用main标签，底部用footer标签
+    - 可读性：就是在开发时，当我们面临语境模棱两可时，可以加一些注释来管理我们的代码
 
 2. meta viewport 是做什么用的，怎么写？
     - `<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">`
