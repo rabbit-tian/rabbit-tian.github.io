@@ -114,9 +114,10 @@
         - Session 一般通过在 Cookie 里记录 SessionID 实现
         - SessionID 一般是随机数
 
-6. LocalStorage 和 Cookie 的区别是什么？
-    - Cookie 会随请求被发到服务器上，而 LocalStorage 不会
-    - Cookie 大小一般4k以下，LocalStorage 一般5Mb 左右
+6. LocalStorage 和 Cookie ，sessionStorage的区别是什么？
+    - Cookie: 有设定的生命周期
+    - LocalStorage：除非数据被清除，否则一直存在
+    - sessionStorage：页面关闭就不存在了
 
 7. （必考）GET 和 POST 的区别是什么？
     1. get在浏览器中回退时，不会再次提交请求，而post会
@@ -133,7 +134,7 @@
     1. 简单快速: 根据 url 查找
     2. 灵活：头部有数据类型，可以完成不同数据类型传输
     3. 无连接：连接一次就会断掉
-    4. 无状态：服务端无法缺点两次连接是否是同一个身份
+    4. 无状态：服务端无法确定两次连接是否是同一个身份
 
 10. HTTP报文的组成部分
     1. 请求报文
@@ -175,7 +176,7 @@
             - DOM Tree：二叉树结构
         2. Css按照Css规则和解释器转成 CSSOM tree(样式结构体)
             - CSSOM tree: 按照树形结构一个个增加样式
-        3. DOM Tree 和 CCSSOMSS Tree 一整和形成 Render Tree
+        3. DOM Tree 和 CSSOM Tree 一整和形成 Render Tree
             - Render Tree不包含隐藏的节点,(比如display:none的节点，还有head节点)注意 visibility:hidden隐藏的元素还是会包含到render tree中,visibility:hidden 会影响布局(layout)，会占有空间
         4. Render Tree 经过 Layout 计算DOM的具体位置和样式
             - 当render tree中的一部分(或全部)因为元素的规模尺寸，布局，隐藏等改变而需要重新构建。这就称为回流(reflow)
