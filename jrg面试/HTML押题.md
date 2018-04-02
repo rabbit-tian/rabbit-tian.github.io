@@ -1,8 +1,7 @@
 ### HTTP押题
 
 1. (必考)你是如何理解HTML语义化的？
-    - 比如 用p标签表示段落，用aside标签表示边栏，用main标签表示页面的主要内容
-    - 其实，最初是PHP后端来写HTML的，他们不会css，只好用table标签来写，但是我们都知道table标签是用来展示表格的，这严重违反了HTML的语义化，后来有了专门写css的，他们使用DIV+CSS，Float浮动+定位布局，就稍微符合了HTML的语义化，再后来，前端专业化，我们知道了HTML标签的各种含义，于是就用恰当的标签来展示内容，而不是都用div来布局，会尽量使用h1，p,ul,main,header等标签
+    - 合适的标签干合适的事，各尽其职，比如头部用header，主体用main标签，底部用footer标签
 
 2. meta viewport 是做什么用的，怎么写？
     - `<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">`
