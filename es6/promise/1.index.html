@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let p = new Promise((resolve,reject) => {
+            resolve(1)
+            // reject(1)
+        })
+        console.log(p) // [Promise 实例]
+        
+
+        // then 接收两个参数，一个参数处理resolve的结果
+        // then 接收两个参数，一个参数处理reject的结果
+        p.then(val => {
+            // 处理resolve的结果
+            console.log(`resolve val is ${val}`) 
+        },val => {
+            // 处理reject的结果
+            console.log(`reject val is ${val}`) 
+        })
+        
+        // catch 处理reject 
+        p.catch(val => {
+            console.log(`catch val is ${val}`)
+        })
+    
+    </script>
+</body>
+</html>

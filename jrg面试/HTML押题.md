@@ -8,7 +8,7 @@
     - `<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">`
     - 设备宽度，用户不能放大缩小，控制页面在移动端不要缩放显示
 
-3. 什么是同源策略及限制
+3. 什么是同源策略及限制**
     - 同源策略：限制从一个源的文档和或脚本如何与来自另一个源的资源进行交互，这是一个用于隔离潜在恶意文件关键的安全机制
         - 源：协议（http），域名（baidu），端口（默认80）
     
