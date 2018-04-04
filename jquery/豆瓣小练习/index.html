@@ -91,6 +91,19 @@
         })
 
         // 获取豆瓣的数据
+        $.ajax({
+            url:'http://api.douban.com/v2/movie/top250',
+            type: 'GET',
+            dataType: 'jsonp',
+            data: {
+                start: 0,
+                count: 20
+            }
+        }).done(function (ret) {
+            console.log(ret);
+        }).fail(function () {
+            console.log('error...')
+        })
 
     </script>
 </body>
