@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_617266_dh9gkqw4r59daemi.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html,body{
+            height: 100%;
+        }
+        body{
+            position: relative;
+            font-size: 12px;
+            line-height: 1.2;
+            background-color: #fff;
+        }
+        main{
+            /* main 设置成满屏，然后留出底部的高度 */
+            height: calc(100vh - 50px);
+            overflow: scroll;
+            /* 在 ios 上滚动有弹性 */
+            -webkit-overflow-scrolling: touch;
+        }
+        main>section{
+            display: none;
+        }
+        main>section.active{
+            display: block;
+        }
+        footer{
+            position: absolute;
+            bottom: 0;
+            height: 50px;
+            width: 100%;
+            display: flex;
+            border-top: 1px solid #ccc;
+        }
+        footer>div {
+            flex: 1;
+            text-align: center;
+            cursor: pointer;
+        }
+        footer>div.active{
+            background-color: #ccc;
+            color: #000;
+        }
+        footer>div>span{
+            display: block;
+            padding-top: 5px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <main>
+        <section class="active">1</section>
+        <section>2</section>
+        <section>3</section>
+    </main>
+    <footer>
+        <div class="active">
+            <span class="iconfont icon-bangdan"></span>
+            <span>Top250</span>
+        </div>
+        <div>
+            <span class="iconfont icon-us"></span>
+            <span>北美</span>
+        </div>
+        <div>
+            <span class="iconfont icon-search"></span>
+            <span>搜索</span>
+        </div>
+
+    </footer>
+
+    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script>
+        // 点击footer 切换面板
+        $("footer > div").click(function () {
+            $(this).addClass("active").siblings("div").removeClass("active");
+            $("main > section").hide().eq($(this).index()).fadeIn();
+        })
+
+        // 获取豆瓣的数据
+
+    </script>
+</body>
+
+</html>
