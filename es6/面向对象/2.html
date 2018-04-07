@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Parent () {
+            this.name = 'parent';
+        }
+
+        Parent.prototype.sayName = function () {
+            console.log('hello');
+        }
+
+        function Child () {
+            Parent.call(this)
+            this.type = 'child';
+        }
+        // 利用中间量把父子间的原型分隔开
+        Child.prototype = Object.create(Parent.prototype);
+        Child.prototype.constructor = Child;
+
+        let c = new Child()
+        console.log(c)
+        
+    </script>
+</body>
+</html>
