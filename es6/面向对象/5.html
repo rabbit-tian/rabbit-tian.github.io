@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Parent{
+            constructor (name="no") {
+                this.name = name;
+            }
+
+            get longName () {
+                return 'good' + this.name
+            }
+            set longName(value) {
+                this.name = value
+            }
+        }
+
+        let p = new Parent('tian')
+        console.log(p.longName)
+        
+        p.longName = 'tiantian'
+        
+        console.log(p.longName)
+
+        
+    </script>
+</body>
+</html>
