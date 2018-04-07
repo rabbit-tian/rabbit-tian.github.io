@@ -6,63 +6,157 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_617266_dh9gkqw4r59daemi.css">
-    <style>
-        *{
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_617266_dh9gkqw4r59daemi.css">
+    <script src="viewport.js"></script>
+   <style>
+        /***********  清除默认样式   ***************************/
+
+        body,
+        dd,
+        dl,
+        dt,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        html,
+        li,
+        ol,
+        p,
+        ul {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
-        html,body{
+
+        body {
+            max-width: 6.4rem;
+            font-size: 0.14rem;
+            font-family: "arial,helvetica,sans-serif";
+        }
+
+        dd,
+        dl,
+        dt,
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            display: block;
+            color: #555;
+        }
+
+        img {
+            display: block;
+            border: 0;
+        }
+
+        input,
+        button {
+            outline: none;
+            border: 0;
+            padding: 0;
+            margin: 0;
+        }
+
+        .clearfix:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        html,
+        body {
             height: 100%;
         }
-        body{
+
+        body {
             position: relative;
-            font-size: 12px;
-            line-height: 1.2;
             background-color: #fff;
         }
-        main{
+
+        main {
             /* main 设置成满屏，然后留出底部的高度 */
-            height: calc(100vh - 50px);
+            /* height: calc(100vh - 1rem); */
             overflow: scroll;
             /* 在 ios 上滚动有弹性 */
             -webkit-overflow-scrolling: touch;
         }
-        main>section{
+
+        main>section {
             display: none;
         }
-        main>section.active{
+
+        main>section.active {
             display: block;
         }
-        footer{
-            position: absolute;
+
+        footer {
+            position: fixed;
+            left: 0;
+            right: 0;
             bottom: 0;
-            height: 50px;
-            width: 100%;
             display: flex;
+            height: 1rem;
+            overflow: hidden;
             border-top: 1px solid #ccc;
+            background-color: #fff;
         }
+
         footer>div {
             flex: 1;
             text-align: center;
             cursor: pointer;
         }
-        footer>div.active{
-            background-color: #ccc;
-            color: #000;
-        }
-        footer>div>span{
-            display: block;
-            padding-top: 5px;
+
+        footer>div.active {
+            color: pink;
         }
 
+        footer>div>span {
+            display: block;
+            padding-top: .1rem;
+        }
+
+        section li {
+            padding: .2rem;
+            border-bottom: 1px solid #000;
+        }
+        section .cover{
+            float: left;
+        }
+        section .cover>img{
+            width: 2rem;
+        }
+        section .detail{
+            margin-left: 2.4rem;
+        }
+        .detail h3{
+            font-size: .38rem;
+            color: #000;
+            margin-bottom: .3rem;
+        }
+        .detail .other{
+            height: .5rem;
+            line-height: .5rem;
+            width: 3.8rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-size: .26rem;
+        }
+        
     </style>
 </head>
 
 <body>
     <main>
-        <section class="active">1</section>
+        <section class="active">
+            <ul></ul>
+        </section>
         <section>2</section>
         <section>3</section>
     </main>
@@ -82,30 +176,8 @@
 
     </footer>
 
-    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script>
-        // 点击footer 切换面板
-        $("footer > div").click(function () {
-            $(this).addClass("active").siblings("div").removeClass("active");
-            $("main > section").hide().eq($(this).index()).fadeIn();
-        })
-
-        // 获取豆瓣的数据
-        $.ajax({
-            url:'http://api.douban.com/v2/movie/top250',
-            type: 'GET',
-            dataType: 'jsonp',
-            data: {
-                start: 0,
-                count: 20
-            }
-        }).done(function (ret) {
-            console.log(ret);
-        }).fail(function () {
-            console.log('error...')
-        })
-
-    </script>
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="./index.js"></script>
 </body>
 
 </html>
