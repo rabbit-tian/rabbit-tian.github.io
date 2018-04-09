@@ -69,10 +69,11 @@ body {
 
 main {
     /* main 设置成满屏，然后留出底部的高度 */
-    /* height: calc(100vh - 1rem); */
+    height: calc(100vh - 1rem);
     overflow: scroll;
     /* 在 ios 上滚动有弹性 */
     -webkit-overflow-scrolling: touch;
+    /* margin-bottom: 1rem; */
 }
 
 main>section {
@@ -113,6 +114,20 @@ footer>div>span {
 section li {
     padding: .2rem;
     border-bottom: 1px solid #000;
+}
+@keyframes runing{
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+section .loading{
+    display: none;
+    text-align: center;
+    padding: .2rem;
+}
+section .loading .iconfont{
+    display: inline-block;
+    font-size: .6rem;
+    animation: 1s runing linear infinite;
 }
 section .cover{
     float: left;
