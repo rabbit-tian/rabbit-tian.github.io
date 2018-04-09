@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script>
+        function event1(resolve) {
+            $.ajax({
+                url: 'http://api.douban.com/v2/movie/top250',
+                type: 'get',
+                data: {
+                    start:0,
+                    count: 20
+                },
+                dataType: 'jsonp',
+                success: function (data) {
+                    if (data) {
+                        resolve(data)
+                    }
+                }
+            })
+        }
+        
+        function event2(resolve) {
+            $.ajax({
+                url: 'http://api.douban.com/v2/movie/us_box',
+                type: 'get',
+                data: {
+                    start:0,
+                    count: 20
+                },
+                dataType: 'jsonp',
+                success: function (data) {
+                    if (data) {
+                        resolve(data)
+                    }
+                }
+            })
+        }
+
+
+        let ajax = function () {
+            return new Promise(function (resolve,reject) {
+                return event1(resolve);
+            })
+        }
+        ajax().then(function (data) {
+            console.log(data);
+            return new Promise(function (resolve,reject) {
+                return event2(resolve)
+            })
+        }).then(function (data) {
+            console.log(data);
+            return new Promise(function (resolve,reject) {
+                $.ajax({
+                    url: 'http://api.douban.com/v2/movie/in_theaters',
+                    type: 'get',
+                    data: {
+                        start:0,
+                        count: 20
+                    },
+                    dataType: 'jsonp',
+                    success: function (data) {
+                        if (data) {
+                            resolve(data)
+                        }
+                    }
+                })
+            })
+        }).then(function (data) {
+            console.log(data);
+        }).catch(function (err) {
+            console.log(err);
+        })
+        
+        
+    </script>
+</body>
+</html>

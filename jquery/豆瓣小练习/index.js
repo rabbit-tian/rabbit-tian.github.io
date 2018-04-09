@@ -24,7 +24,7 @@ function getData(){
     $.ajax({
         url: "http://api.douban.com/v2/movie/top250",
         type: "GET",
-        dataType: "jsonp",
+        dataType: "json",
         data: {
           start: index,
           count: 20
