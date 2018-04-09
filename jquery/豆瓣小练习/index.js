@@ -38,7 +38,7 @@ function setData (data) {
                             <span>${e.rating.average}</span>分 /
                             <span>${e.collect_count}</span>收藏</div>
                         <div class="other">
-                            <span>${e.year}</span>
+                            <span>${e.year}/ </span>
                             <p style="display: inline-block;" class="theme"></p>  
                         </div>
                         <div class="other">导演：
@@ -56,10 +56,15 @@ function setData (data) {
         `
         let $node = $(dataHtml)
         let genresHtml = '';
-        e.genres.forEach(function(el, idx){
-            genresHtml += "/"+ el +""
+        let directorsHtml = '';
+        e.genres.forEach(function(el){
+            genresHtml += `${el}、`
         })
-        $('.theme').text(genresHtml)
-        $ul.append(dataHtml)
+        e.directors.forEach(function (el) {
+            directorsHtml += `${el.name}、`
+        })
+        $('.theme').text(genresHtml);
+        $('.directors').text(directorsHtml);
+        $ul.append(dataHtml);
     })
 }
