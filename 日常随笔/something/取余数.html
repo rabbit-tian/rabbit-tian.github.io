@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str = '1234332223.23'; // 1,234,332,223.23
+        
+        console.log(str.split('.')) // ["1234332223", "23"]
+        let newStr = str.split('.')[0]
+        newStr = newStr.split('')
+        console.log(newStr);
+        // if (newStr.length % 3 === 0) {
+
+        // }
+            
+        // 方法二： toLocaleString()
+        console.log(Number('12334433.097').toLocaleString());
+
+        // 方法三：正则
+        
+
+    </script>
+</body>
+</html>

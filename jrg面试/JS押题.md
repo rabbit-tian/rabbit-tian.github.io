@@ -161,7 +161,7 @@
     
     // 异步变同步
     async function asyncCall () {
-        let result = await returnPromise()
+        let result = await return Promise()
     }
     asyncCall()
     

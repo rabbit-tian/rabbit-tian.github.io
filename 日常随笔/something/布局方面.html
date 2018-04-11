@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            margin-left: 30px;
+        }
+        ul,li{
+            list-style: none;
+        }
+        .box ul {
+            width: 340px;
+            border: 1px solid #000;
+            margin-left: -10px;
+            margin-right: -10px;
+        }
+        .box ul li {
+            float: left;
+            width: 33.333%;
+            height: 100px;
+            background-color: pink;
+            padding: 10px;
+            border: 1px solid #000;
+            box-sizing: border-box;
+        }
+        .clearfix::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul class="clearfix">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+    </div>
+</body>
+</html>
