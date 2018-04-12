@@ -128,5 +128,33 @@
 
     
 ### 我所知道的webpack
-1. 
+1. 主要功能：处理模块间的依赖关系，模块打包工具
+2. 在webpack的世界里，任何一个图片，一个css，甚至一个字体，都称为模块
+3. 主要应用场景：单页面富应用（SPA）
+4. webpack 就是一个 webpack.config.js 文件而已
+5. 包括入口文件entry和出口文件output
+    - entry: 从此处寻找依赖和编译
+    - path：存放打包后文件的输出目录
+    - publicPath：指定资源文件引用的目录，如果资源放在CDN上，可以直接填写CDN网址
+    - output: 打包后文件的存放位置和文件名
+    
+    ```
+    var path = require('path')
+    module.exports = {
+    entry: {
+        main: './main'
+    },
+    output: {
+        path:path.join(__dirname,'./dist'),
+        publicPath: './dist',
+        filename: 'main.js'
+        }
+    }
+    ```
+6. webpack 的加载器 loaders
+    - 安装不同加载器对各种后缀文件进行处理
+    - css: style-loader,css-loader
+    - 每个loader都包含 test 和 use，导入文件 .css,然后将它通过css-loader,style-loader转换，然后继续打包
+7. 插件 plugins
+    - 比较大的项目中，并不希望把 css写在 js文件中，太占体积，此时我们就需插件 `extract-text-webpack-plugin` 把各地的 css提取出来，生成一个 main.css文件，最终在 index.html中，通过 link标签形式加载
 
