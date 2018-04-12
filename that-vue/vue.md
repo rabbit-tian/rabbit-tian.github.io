@@ -1,0 +1,59 @@
+### 初始vue
+1. 简单的渐进式框架
+    - 简单：vue.js压缩后只有 17KB
+    - 渐进式：可以一步步的深入学习和使用，根据自己的项目需要，选择不同的维度来使用它
+2. vue常见的高级功能
+    - 解耦视图和数据
+    - 可复用的组件
+    - 前端路由
+    - 状态管理
+    - 虚拟DOM
+3. MVVM 模式
+    - 当 view 视图层变化时，自动更新到viewModel视图模型上，反之亦然，view和viewModel实现了数据的双向绑定
+
+### vue实例和数据绑定
+1. vue实例：`let app = new Vue({el: '#app'})`
+    - 通过 `app.$el`来访问
+    - `app.$nextTick` ：保证在dom渲染完成后获取有效的节点
+2. 数据：`let app = new Vue({el: '#app'，data: myDate})`: 在data中声明数据，可以对数据进行控制和维护
+
+3. 常用的生命周期，钩子函数
+    - created：$el未挂载，主要对数据进行一些初始化处理
+    - mounted：$el挂载完成，一般可以开始业务逻辑
+    - beforeDestory: 实例销毁前，主要解绑一些 事件监听函数
+
+4. 插值 `<span v-pre> {{myDate}} </span>` v-pre：只想显示内容，不改变
+
+5. vue 的脚手架的使用
+    - 安装node.js `node -v`: 查版本
+    - npm包管理器  `npm -v`
+    - 全局安装 vue `npm install vue`
+    - 安装脚手架 `npm install vue-cli --global`
+    - 找到项目存放的位置，自定义项目名 `vue init webpack project`
+    - 安装依赖  `npm install`
+    - 启动项目： `npm run dev`
+6. 过滤器，filters {{price | formatDate}}
+    - 对数据进行过滤，格式化上下文，比如字母大写等
+7. 指令和事件
+    - v-if:判断
+    - v-on:绑定事件 语法糖：@
+    - v-bind: 动态更新元素上的属性
+        - `<img v-bind:src="/xxx">`
+        - `<img :src="/xxx">` 语法糖
+
+
+### 计算属性computed
+1. 模板内渲染数据，将复杂的逻辑放在computed中
+2. 比如用 计算属性 根据商品单价和数量，计算总价时
+    - 只要商品有任何变化，计算属性就会自动更新，总价也自动更新
+    - 计算属性中 都包含 getter 和 setter，默认只是利用了getter来读取
+3. 计算属性经常用来动态传递 props
+4. 计算属性可以依赖其他计算属性，也可以依赖其他实例的数据
+5. 计算属性最大的特点（相对于methods）： 依赖缓存，只要依赖的数据发生变化，才会重新取值，否则，计算属性不更新
+
+
+### 绑定class
+1. `<div class="static" :class="{ 'active': isActive, 'error': 'isError' }"></div>`
+2. 
+
+
