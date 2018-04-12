@@ -52,8 +52,56 @@
 5. 计算属性最大的特点（相对于methods）： 依赖缓存，只要依赖的数据发生变化，才会重新取值，否则，计算属性不更新
 
 
-### 绑定class
-1. `<div class="static" :class="{ 'active': isActive, 'error': 'isError' }"></div>`
-2. 
+### 绑定class 和 内联样式
+1. 绑定class
+    
+    ```
+    <div id="app">
+    <div class="box" :class="{'active': isActive,'bor':isBor}"></div>     
+    <div class="ct" :class="[{'active': isActive},isRadius]"></div>
+    </div>
 
+    <script>
+        let app = new Vue({
+            el: '#app',
+            data: {
+                isActive: true,
+                isBor: true,
+                isRadius: 'rad'
+            }
+        })
+    </script>
+    ```
+
+2. 绑定内联样式
+    
+    ```
+    <div class="style" :style="{'backgroundColor':backgroundColor,'border':border}"></div>
+    <div class="style" :style="styles"></div>
+    </div>
+
+    <script>
+        let app = new Vue({
+            el: '#app',
+            data: {
+                backgroundColor: 'red',
+                border: '1px solid #000',
+                styles: {
+                    backgroundColor: 'pink',
+                    border: '10px solid #000',
+                }
+            }
+        })
+    </script>
+    ```
+
+### 内置指令
+1. 不需要表达式的指令
+    - `v-clock` : 当网速慢时，可避免显示 {{message}} 的字样
+    - `v-once` : 元素或组件只渲染一次
+2. 条件渲染指令
+    - `v-if v-else-if v-else`: if判断
+    - `<template v-if="status === 1"><p>hello</p><p>world</p></template>` ： 渲染多个元素，用template，template不占据节点位置
+3. 关于 key 值：保证元素的唯一性，不可复用
+4. 
 
