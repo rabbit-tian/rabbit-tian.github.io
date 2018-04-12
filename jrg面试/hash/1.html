@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="#/html">html课程</a>
+    <a href="#/css">css课程</a>
+    <script>
+        window.onload = function(){
+            //当hash发生变化的时候， 会产生一个事件 onhashchange
+            window.onhashchange = function(){
+                console.log( '你的hash改变了' );
+                //location对象是 javascript内置的(自带的)
+                console.log( location );
+            }
+         }
+    </script>
+</body>
+
+</html>
