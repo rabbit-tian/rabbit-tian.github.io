@@ -11,7 +11,7 @@
 
 <body>
     <div id="app">
-        <ul v-for="(book,index) in books">
+        <ul v-for="(book,index) in filters">
             <li>书名：{{book.name}}</li>
             <li>作者{{book.author}}</li>
         </ul>
@@ -36,8 +36,13 @@
                     },
                 ]
             },
-
-        
+            computed: {
+                filters: function () {
+                    return this.books.filter(function (book) {
+                        return book.name.match(/javascript/)
+                    })
+                }
+            }
         })
         // app.books.push({ // 原数组变
         //     name: 'tian',
@@ -45,7 +50,7 @@
         // })
         // app.books.pop() // 原数组变
         // app.books.slice(1,1) // 原数组不变
-        app.books.splice(1,1) // 原数组变
+        // app.books.splice(1,1) // 原数组变
         
         console.log(app.$data.books);
     </script>

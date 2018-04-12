@@ -112,5 +112,21 @@
     - app.books.splice: 原数组变
     - app.books.slice: 原数组不变
     - 数组更新时，并不是直接重新渲染整个列表，而是最大化的复用dom元素，提高了性能
+    - 可以通过 计算属性 返回我们需要的数组，它依赖于books，但是不会修改books
+7. 方法和事件
+    - v-on：click  @click(10)
+    - 没有参数时，可不加括号,不加括号时的参数默认是event
+    - viewModel销毁时，所有事件处理器都会自动删除
 
+8. 修饰符
+    - 阻止默认事件：`@click.prevent="handel"`
+    - 阻止冒泡：`@click.stop="handel"`
+    - 事件捕获方式 `@click.capture="handel"`
+    - 只在自身触发 `@click.self="handel"`
+    - 只触发一次 `@click.once="handel"`
+    - 键盘事件 `@keyup.13="submit"` (enter,delete,up,down,left,right)
+
+    
+### 我所知道的webpack
+1. 
 
