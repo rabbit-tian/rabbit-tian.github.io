@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="(book,index) in books">{{index}}-{{book.name}}</li>
+        </ul>
+        
+        <ul>
+            <li v-for="(value,key) in user">{{value}}：{{key}}</li>
+        </ul>  
+    </div>
+
+    <script>
+        let app = new Vue({
+            el: '#app',
+            data: {
+                books: [
+                    {name:'《vue》'},
+                    {name:'《vue-router》'},
+                    {name:'《vuex》'},
+                ],
+                user: {
+                    name: 'tian',
+                    age: 18
+                }
+            }
+            
+        })
+
+    </script>
+</body>
+
+</html>

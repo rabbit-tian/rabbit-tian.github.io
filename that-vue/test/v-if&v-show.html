@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div @click="change">点我呀</div> 
+        <template>
+            <!-- <p v-show="isOut">{{text}}</p>  
+            <p v-show="isOut">{{text}}</p>  
+            <p v-show="isOut">{{text}}</p>   -->
+            <p v-if="isOut">{{text}}</p>  
+            <p v-if="isOut">{{text}}</p>  
+            <p v-if="isOut">{{text}}</p>  
+        </template>
+        <p>小样</p>  
+    </div>
+
+    <script>
+        let app = new Vue({
+            el: '#app',
+            data: {
+                text: 'tian',
+                isOut: true
+            },
+            methods: {
+                change:function () {
+                    this.isOut = !this.isOut
+                }
+            }
+            
+        })
+
+    </script>
+</body>
+
+</html>

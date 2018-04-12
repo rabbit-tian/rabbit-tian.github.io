@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <ul v-for="(book,index) in books">
+            <li>书名：{{book.name}}</li>
+            <li>作者{{book.author}}</li>
+        </ul>
+    </div>
+
+    <script>
+        let app = new Vue({
+            el: '#app',
+            data: {
+                books: [
+                    {
+                        name: 'vue.js',
+                        author: '梁灏'
+                    },
+                    {
+                        name: 'javascript 语言精粹',
+                        author: 'DC'
+                    },
+                    {
+                        name: 'javascript 高程设计',
+                        author: 'NC'
+                    },
+                ]
+            },
+
+        
+        })
+        // app.books.push({ // 原数组变
+        //     name: 'tian',
+        //     author: 'tian'
+        // })
+        // app.books.pop() // 原数组变
+        // app.books.slice(1,1) // 原数组不变
+        app.books.splice(1,1) // 原数组变
+        
+        console.log(app.$data.books);
+    </script>
+</body>
+
+</html>
