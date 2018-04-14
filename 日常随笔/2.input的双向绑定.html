@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="myinput">
+    <script>
+        /*
+            1. 利用 Object.defineProperty(）中 get 和 set的方法及时获取和设置值
+            2. input 这边利用键盘事件实现实时更新
+        
+        */
+
+        var input = document.getElementById("myinput");
+        var obj = {};
+        Object.defineProperty(obj, "input", {
+            get: function () {
+                return input.value;
+            },
+            set: function (val) {
+                input.value = val;
+                changeCallback(input.value);
+            }
+        });
+
+        input.onkeyup = function () {
+            obj.input = input.value;
+        };
+
+        function changeCallback(val) {
+            console.log("这里是不管view层，还是module层修改后的回调，最后设置的值是" + val);
+        }
+
+    </script>
+</body>
+
+</html>

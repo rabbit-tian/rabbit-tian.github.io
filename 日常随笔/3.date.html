@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function hourFn() {
+            //国际日期标准，第一天是星期天
+            let week = ['日', '一', '二', '三', '四', '五', '六'];
+            let date = new Date();
+            let y = date.getFullYear();
+            let m = date.getMonth() + 1;
+            let d = date.getDate();
+            let w = date.getDay();
+            let h = date.getHours();
+            let mi = date.getMinutes();
+            let s = date.getSeconds();  
+            if (h < 10) h = '0' + h;
+            if (mi < 10) mi = '0' + mi;
+            if (s < 10) s = '0' + s;
+            return y + '-' + m + '-' + d + ' 星期' + week[w] + ' ' + h + ':' + mi + ':' + s ;
+        }
+
+        function data () {
+            let weekArr = ['日', '一', '二', '三', '四', '五', '六'];
+            let date = new Date();
+            let year = date.getFullYear();
+            let month = date.getMonth() +1;
+            let day = date.getDate();
+            let week = date.getDay();
+            let hour = date.getHours();
+            let minute = date.getMinutes();
+            let second = date.getSeconds();
+            
+            function toDubble(some) {
+                if (some < 10) {
+                    some = '0'+some;
+                }
+                return some;
+            }
+            return year+'-'+ toDubble(month) + '-' + toDubble(day) + '星期' + weekArr[week] + toDubble(hour) +':'+toDubble(minute) + ':'+toDubble(second)
+        }
+        console.log(data()); // '2018-4-14 星期六 09:46:53'
+    </script>
+</body>
+
+</html>
