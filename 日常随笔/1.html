@@ -10,10 +10,15 @@
 
 <body>
     <script>
-        // 12345 转化为 kb
+        /*
+            1. 先判断数值是否是 b,kb,mb,gb,并且保留两位小数点 tofixed(2)
+            2. 再次判断保留的两位小数点如果是 00，直接删除掉
+            3. 注意： substring(n,m) 从n截取到m，不包含m
+            4. 注意： substr(n,m),从n截取 m 个数
+        */ 
         function change(limit) {
             let size = "";
-            if (limit < 0.1 * 1024) {                            //小于0.1KB，则转化成B
+            if (limit < 0.1 * 1024) {                            //小于0.1KB，则转化成B，保留两位小数
                 size = limit.toFixed(2) + "B"
             } else if (limit < 0.1 * 1024 * 1024) {            //小于0.1MB，则转化成KB
                 size = (limit / 1024).toFixed(2) + "KB"
@@ -31,7 +36,7 @@
             return size;
         }
 
-        let newLimit = change(1234567);
+        let newLimit = change(102.3);
         console.log(newLimit);
 
     </script>
