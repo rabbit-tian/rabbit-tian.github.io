@@ -1,12 +1,14 @@
 ### DOM押题
-1. DOM事件的级别
+1. DOM事件的级别 false:默认冒泡阶段
     - DOM0： element.onclick = function () {}
     - DOM1中没有涉及到事件的应用
     - DOM2: element.addEventListener('click',function () {},false)
     - DOM3: element.addEventListener('keyup',function () {},false)
 2. Event对象的常见应用
     - 阻止默认行为：event.preventDefault()
-    - 阻止冒泡行为：event.stopPropagation()
+    - 阻止冒泡行为：
+        - event.stopPropagation()
+        - event.cancelBubble = true
     - 阻止同一元素的两个click事件中的一个：event.stopImmediateProPagation()
     - 当前所绑定事件的对象：event.currentTarget
     - 当前被点击的元素：event.target
