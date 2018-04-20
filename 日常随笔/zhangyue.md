@@ -11,15 +11,15 @@
     - 都会被加载，img标签会异步加载数据，跟其他节点没有关系
 
 2. 下面两组代码的区别
-    
+    - 代码一：就是渲染的设备的尺寸
+    - 代码二：渲染的内容去尺寸，不包括侧边栏
+
     ```
     代码一：<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
     
    代码二： <meta name="viewport" content="width=100%,initial-scale=1,maximum-scale=1">
     ```
-    - 代码一：就是渲染的设备的尺寸
-    - 代码二：渲染的内容去尺寸，不包括侧边栏
-
+    
 3. 描述页面css，js等并行加载与顺序执行
     - js 加载时同步的，碰到script标签，会停止其他加载，加载完毕后，再进行下一步操作
     - script加上defer会并行加载
@@ -38,6 +38,20 @@
     - open-quote、close-quote 默认为双引号
 
 7. javascript 中的 delete 删除的对象，如果是一个引用类型，那他删除的是引用对象的指针，他对基本类型不起作用
+    
+    ```
+    function f(a,b,c) {
+        a = 2;
+        b = 3;
+        c = 4;
+        delete a;
+        arguments[0] = 5;
+        delete arguments[1];
+        arguments[1] = 6;
+        return [a,b,c,arguments[0],arguments[1],arguments[2]]
+    }
+    console.log(f(1,1)) // [5, 3, 4, 5, 6, undefined]
+    ```
 
 8. flex 属性
     - 兼容性：加前缀
@@ -49,7 +63,7 @@
         - align-items   定义项目在交叉轴上如何对齐
         - align-content 定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用
 
-    9. 说说你对模块化的理解
+9. 说说你对模块化的理解
     - 主要是为了 可复用性 和 方便依赖管理，侧重功能的封装，将js代码封装成具有特定功能的模块
     - 模块可以通过传递不同的参数来修改这个功能的相关配置，每个模块都是单独的作用域
     - 一个模块的实现可以依赖其他模块
@@ -66,5 +80,7 @@
     var a = f.x
     a() // false  this指向window
     ```
+
+11. 
 
 
