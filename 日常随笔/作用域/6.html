@@ -8,15 +8,19 @@
 </head>
 <body>
     <script>
-        var a = 1;
-        function foo(){
-            console.log(a); // 1
+        function foo(n,o){
+            console.log(o);
+            return {
+                fun:function(m){
+                    return foo(m,n)
+                }
+            }
         }
-        function change() {
-            var a = 2;
-            foo();
-        }
-        change();
+        var a = foo(0);
+        a.fun(1); 
+        a.fun(2);
+        a.fun(3);
+        var b = foo(0).fun(1).fun(3);
     </script>
 </body>
 </html>
