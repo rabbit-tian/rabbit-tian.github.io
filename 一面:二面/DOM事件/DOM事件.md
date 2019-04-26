@@ -24,7 +24,7 @@
 6. 自定义事件
     - Event
 
-    ```
+    ```js
     // 自定义事件
     let eve = new Event('custome')
     ev.addEventListener('custome',function ()   {
@@ -32,7 +32,6 @@
     })
     // 触发事件
     ev.dispatchEvent(eve)
-
     ```
     - CustomEvent: 和Event的区别，可以加参数
 

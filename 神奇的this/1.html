@@ -92,15 +92,15 @@
 //     new arr.fn;
 
 
-    var obj = {
-        name:'nizp', // 这个name不挂在window上
-        fn(){
-           console.log(this.name); // C  ''
-        }
-    };
-    setTimeout(obj.fn,1000);
+    // var obj = {
+    //     name:'nizp', // 这个name不挂在window上
+    //     fn(){
+    //        console.log(this.name); // C  ''
+    //     }
+    // };
+    // setTimeout(obj.fn,1000);
 
-    console.dir(window);
+    // console.dir(window);
 
      /*
         A:nizp  B:undefined C:'' D:null  E:报错

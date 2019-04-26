@@ -21,9 +21,9 @@
             - 在子组件中发射事件  `click :function (msg) {this.$emit('transfer',msg)}`
             - 在父组件注册事件 `<my-form @transfer="getUsername"></my-form>`
             - 然后就可以在父组件中使用{{msg}}
-            
-    - 非父子组件通信同样也可以用Vue.$emit自定义事件来解决
         
+    - 非父子组件通信同样也可以用Vue.$emit自定义事件来解决
+      
         ```
         var bus = new Vue()
         // 组件A
@@ -33,8 +33,9 @@
          console.log(id)
         })
         ```
-     
+    
      - vue跨组件跨模块通信
+       
         - 如果项目结构复杂化以后，这样的自定义事件变多以后代码难以管理，所以还是建议使用vuex。 
     
 3. Vuex 的作用是什么？[看文档](https://vuex.vuejs.org/zh-cn/intro.html)
@@ -50,7 +51,7 @@
     - <router-view> : 是路由的出口，路由匹配到的组件将 渲染 在这里,即渲染 <router-link>指向的目标地址。
     
     - 同一个路径可以匹配多个路由，匹配的优先级就按照路由的定义顺序：谁先定义的，谁的优先级就最高。
-        
+    
 6. Computed 计算属性的用法？跟 Methods 的区别。[参考](https://zhuanlan.zhihu.com/p/33778594)
     - computed
         - 响应式的
@@ -65,7 +66,7 @@
 ### 双向绑定
 1. 了解mvvm框架吗?
     - 了解，vue框架
-2. 对mvvm的认识--单向数据流
+2. 对mvvm的认识--双向数据流
     - 先聊MVC，model(数据保存)，view(用户界面)，controller(业务逻辑)
         - View 传送指令到 Controller
         - Controller 完成业务逻辑后，要求 Model 改变状态
